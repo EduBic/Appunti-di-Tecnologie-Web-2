@@ -1,0 +1,14 @@
+
+#latex
+*.aux
+*.log
+*.synctex.gz
+*.synctex.gz(busy)
+*.toc
+*.lot
+*.glo
+*.ist
+*.out
+*.glg
+*.gls
+*.lof
