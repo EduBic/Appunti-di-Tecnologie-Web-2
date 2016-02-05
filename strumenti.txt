@@ -1,0 +1,3 @@
+LISTA STRUMENTI UTILITY PER IL WEB
+
+-Google mobile compatibility test: permette di eseguire un test su un sito e garantire che questo sia usabile da mobile.
