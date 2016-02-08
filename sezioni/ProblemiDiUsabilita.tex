@@ -112,7 +112,7 @@
 				Potrebbe essere interessante approfondire la questione dello \emph{scroll}. Da un lato abbiamo visto che lo \emph{scroll} è uno sforzo in più richiesto all'utente ma il tempo passa e il comportamento e le abitudini degli utenti possono cambiare (soprattutto il boom mobile). Ci sono molti studi che indicano che gli utenti sono pronti a fare lo sforzo di \emph{scroll} se il layout lo incoraggia. Ulteriori approfondimenti \url{http://it.uxmyths.com/post/28647124262/mito-3-le-persone-non-scrollano}.
 				
 		\subsubsection{Lo sforzo computazionale spiegato da Engelbart}
-			Abbiamo parlato nella sezione La storia del Web (\url(https://www.youtube.com/watch?v=1MPJZ6M52dI) della straordinaria invenzione di Douglas Engelbart dove oltre ad il primo mouse della storia si vedeva una tastiera da 5 tasti. Essa permetteva di memorizzare fino a 31 combinazioni di tasti associate ad un evento sulla macchina. Questa tecnologia non è sopravvissuta proprio per il troppo sforzo computazionale richiesto. Per questo motivo per ogni cosa chiedetevi sempre qual è lo sforzo che un utente deve compiere e cercate di minimizzarlo, l'uomo si muove sempre verso quella direzione.
+			Abbiamo parlato nella sezione La storia del Web (\url{https://www.youtube.com/watch?v=1MPJZ6M52dI}) della straordinaria invenzione di Douglas Engelbart dove oltre ad il primo mouse della storia si vedeva una tastiera da 5 tasti. Essa permetteva di memorizzare fino a 31 combinazioni di tasti associate ad un evento sulla macchina. Questa tecnologia non è sopravvissuta proprio per il troppo sforzo computazionale richiesto. Per questo motivo per ogni cosa chiedetevi sempre qual è lo sforzo che un utente deve compiere e cercate di minimizzarlo, l'uomo si muove sempre verso quella direzione.
 		
 		\subsubsection{Bloated design}
 			Il \emph{bloated design}, letteralmente design gonfiato, è un altro tipico errore che abita il web odierno. Il \emph{bloated design} si ha quando il sito presenta troppi effetti, questo risulta essere \textbf{statisticamente fastidioso} poiché aumenta lo sforzo computazionale.
@@ -175,17 +175,72 @@
 			Le metafore visive tradite non hanno soltanto a che fare con link, pulsanti e immagini ma anche con \textbf{concetti}. Ad esempio dei concetti che significano qualcosa ma non sono intuibili subito.
 		
 		\subsubsection{I menu di navigazione}
+			Per quanto riguarda i menu dei siti internet abbiamo un vantaggio e uno svantaggio.
+			\begin{itemize}
+				\item (vantaggio) Essi sono usati già nei sistemi operativi per cui gli utenti hanno \textbf{familiarità} con essi.
+				\item (svantaggio) I menu del desktop sono costituiti da comandi, i menu del web di informazioni e quando c'è troppa informazione i menu "esplodono" in dimensione.
+			\end{itemize}
+			Nell'interazione con il mouse a questi menu molto grandi abbiamo degli effetti disastrosi sull'usabilità.
+			\begin{itemize}
+				\item L'83\% degli utenti non c'entra la casella al primo colpo.
+				\item Il 53\% esce con il mouse e chiude il menu.
+			\end{itemize}
+
 			\paragraph{Pathfinding}
-			\paragraph{Fault-tollerant}
+				Per capire queste percentuali analizziamo come gli utenti si muovono nelle pagine web, il così detto \emph{pathfinding}. L'algoritmo umano di spostamento da A a B è una linea retta, sforzo computazionale minimizzato. Nei menu con sotto-menu (\textbf{menu a cascata}) questo non funziona. Di fronte a questi tipi di menu il 92\% degli utenti esce dal menu con conseguente chiusura di esso. Per questo motivo i \textbf{menu a cascata} devono avere al massimo due livelli ed essere \emph{fault-tolerant} cosicché all'uscita del menu esso non si chiuda immediatamente creando frustrazione all'utente.
 			
 		\subsubsection{Il testo}
+			Torniamo a parlare del testo dopo aver visto che:
+			\begin{itemize}
+				\item il testo per il web è diverso dal testo normale,
+				\item deve essere semplice e sintetico
+				\item e non deve essere scritto in "politichese".
+			\end{itemize}
+			Vediamo ora altre regole che possono generare sensazioni negative se non rispettata.
+			\begin{enumerate}
+				\item Il testo deve \textbf{essere leggibile} con \textbf{dimensioni adatte}. La grandezza minima è di 10pt per ogni schermo per carattere.
+				\item Rinunciateci. A qualcuno non andrà bene il vostro testo. Sempre. Per andare incontro a questi mettere a disposizione delle opzioni visibili per il \emph{resize}. (Questo infatti è divenuto uno strumento \emph{zoom} dei browser)
+				\item Il testo è testo e deve essere riconosciuto come tale. Non usarlo mai come grafica con cambi di \emph{font}. Sempre avere un solo \emph{font} (al massimo 2) consistente per tutta la pagina, meglio per il sito. Il \emph{font} a cui gli utenti sono più abituati risulta \textbf{Verdana}.
+				\item Fare sempre attenzione al contrasto tra colore del testo e gli ulteriori sfondi delle pagine.
+			\end{enumerate}
 			
 			\paragraph{Caps lock}
+				Per quanto riguarda il \emph{caps lock} dai dati è risultato più difficile da leggere del 10\%, principalmente perché non si è abituati.
 			\paragraph{Immagini sostitutive}
-			\paragraph{La maledizione Lorem Ipsum}
-				\subparagraph{L'effetto ghigliottina}
+				Per le immagini invece che sostituiscono il testo abbiamo conseguenze molto negative:
+				\begin{itemize}
+					\item L'immagine \textbf{non scala} e aumenta il carico della pagina.
+					\item Non permette l'uso dello strumento \emph{past \& copy}.
+					\item Non interagisce con il motore di ricerca che lo considera immagine appunto. 
+				\end{itemize}
 				
-		\subsubsection{Scanning}
+			\paragraph{La maledizione Lorem Ipsum}
+				Il \emph{lorem ipsum} è una tecnica molto in voga nel web design. Permette infatti di strutturare un layout senza la presenza del testo effettivo che andrà inserito come contenuto. \emph{Lorem ipsum} infatti è un testo latino senza significato generato automaticamente che va a riempire le parti di testo di una pagina solo ai fini del layout.
+				Facendo così il layout visivo si stacca dal testo dando più priorità al layout quando invece è il testo la cosa più importante. Usare il \emph{lorem ipsum} molte volte crea siti con scarsa usabilità.
+				Il testo non è da considerare come un elemento di blocco per garantire l'usabilità ma deve essere strutturato secondo certe logiche (vedi Scanning).
+				
+				\subparagraph{L'effetto ghigliottina}
+					Usando il \emph{lorem ipsum} di fatto otterremo alcuni casi dove il testo sfora il layout quando inseriamo il vero testo. Oppure addirittura si ricorre ad uno \emph{scroll} interno alla pagina perché lo spazio previsto risulta insufficiente. 
+				
+			\paragraph{Scanning}
+				Cosa fanno gli utenti appena arrivano in una pagina web? Avviene lo \emph{scanning} veloce della pagina non per forza ordinato. Questo fa sì che l'utente si crei un'immagine mentale approssimata di come è fatta la pagina per minimizzare lo sforzo. Sarà poi l'input continuo dell'occhio a dare una mappa visiva informativa fatta meglio. Per questo motivo i grossi blocchi di testo richiedono troppo sforzo e durante la fase di \emph{scanning} il contenuto di essi non è percepito. Il testo deve avere una struttura propria.
+			
 			\paragraph{Strutturazione}
-			\paragraph{Problemi}
-			\paragraph{Blonde effect}		
+				Per strutturare bene il testo occorre:
+				\begin{enumerate}
+					\item Dividere il testo in blocchi.
+					\item Dare un titolo descrittivo ad ogni area del testo.
+					\item Usare liste \emph{itemize}.
+				\end{enumerate}
+				Questi accorgimenti aiutano la prima organizzazione/\emph{scanning} della pagina. Il titolo (\emph{keyword}) del blocco dovrebbe essere breve e pertinente. Si possono usare parole evidenziate (uso di \emph{bold}) che aiutano lo \emph{scannign} della pagina, tenendo conto che un utente memorizza fino a 6/7 \emph{keyword}.
+				I link tendono ad essere più evidenti delle \emph{keyword} sono assorbiti dallo \emph{scan} iniziale. Di seguito elenchiamo alcuni accorgimenti per i link:
+				\begin{itemize}
+					\item I link non devono essere troppo lunghi.
+					\item I link non devono avere nomi troppo simili per aiutare lo \emph{scanning}.
+					\item I link non devono essere mai del tipo "clicca qui", questo significa dare allo \emph{scanning} la \emph{keyword} "clicca qui" che non ha nessun significato, confonde l'utente e aumenta lo sforzo computazionale richiesto.
+				\end{itemize}
+				Le liste (terzo punto) aumentano la chiarezza e il grado di soddisfazione dell'utente (+47\%) si usano con almeno quattro elementi perché con meno affatico l'utente. Attenzione però! L'efficienza delle liste \textbf{decresce linearmente} con il numero di liste disposte verticalmente, mentre \textbf{decresce esponenzialmente} con le lista disposte sull'asse orizzontale.
+				
+			\paragraph{Blonde effect}
+				Il \emph{blonde effect} avviene quando si ha una percezione errata a causa dei limiti dell'utente. Durante lo \emph{scan} l'utente può percepire erroneamente alcune zone, bisogna quindi sempre porre attenzione a come lo \emph{scanning} agisce sulle nostre pagine.
+			Per capire perché "blonde" \url{https://www.youtube.com/watch?v=DctVteQDRIM}
