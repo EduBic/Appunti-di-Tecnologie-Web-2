@@ -4,12 +4,17 @@
 \usepackage[utf8]{inputenc}
 \usepackage[italian,english]{babel}
 \usepackage[xindy]{imakeidx}
+\usepackage{xcolor}
 \usepackage{graphicx}
-\usepackage[hidelinks]{hyperref}
+
+\usepackage[hidelinks, colorlinks=true]{hyperref}	
+
 \usepackage{caption}
 \captionsetup{tableposition=top, figureposition=bottom, font=small}
 
+
 \usepackage{epigraph}
+
 
 \makeindex
 
@@ -43,11 +48,12 @@
 \begin{abstract}
 	`` .''
 \end{abstract}
-
-\tableofcontents
+\hypersetup{linkcolor=black}
+\tableofcontents[hidelinks]
 	\newpage
 \listoffigures
 
+\hypersetup{linkcolor=blue, urlcolor=blue}
 
 \include{sezioni/PrimiPassiNelWeb}
 
