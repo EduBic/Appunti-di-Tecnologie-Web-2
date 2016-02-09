@@ -1,11 +1,13 @@
 
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,11pt]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian,english]{babel}
 \usepackage[xindy]{imakeidx}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amssymb}
 
 \usepackage[hidelinks, colorlinks=true]{hyperref}	
 
@@ -24,7 +26,7 @@
 			sezioni/ProblemiDiUsabilita,%
 			sezioni/SitiEcommerce,%
 			sezioni/IlComportamentoDegliUtenti,%
-			%sezioni/LaPubblicità,%
+			sezioni/LaPubblicita,%
 			%sezioni/LaRicerca,%
 			%sezioni/IlNomeGiusto,%
 			%sezioni/ProblematicheDellInformazione,%
@@ -49,9 +51,10 @@
 	`` .''
 \end{abstract}
 \hypersetup{linkcolor=black}
-\tableofcontents[hidelinks]
-	\newpage
+\tableofcontents
+	%\newpage
 \listoffigures
+	%
 
 \hypersetup{linkcolor=blue, urlcolor=blue}
 
@@ -65,7 +68,7 @@
 
 \include{sezioni/IlComportamentoDegliUtenti}
 
-%\include{sezioni/}
+\include{sezioni/LaPubblicita}
 
 %\include{sezioni/}
 

@@ -14,14 +14,21 @@
 		
 	\subsection{Il web}
 	
-		Alla luce di queste informazioni del comportamento tenuto dagli utenti con i giornali si può forse pernsare che per le pagine web sia lo stesso. Non è così! La modalità di lettura differisci ma non solo, anche lo spostamento dell'attenzione ha un comportamento diverso.
+		Alla luce di queste informazioni del comportamento tenuto dagli utenti con i giornali si può forse pensare che per le pagine web sia lo stesso. Non è così! La modalità di lettura differisci ma non solo, anche lo spostamento dell'attenzione ha un comportamento diverso come vediamo in figura ~\ref{fig:FasceDAttenzione2}.
+		
+		\begin{figure} [h]
+				\centering
+				\includegraphics[width=\textwidth]{images/IlComportamentoDegliUtenti-FasceDAttenzione2}
+				\caption[Il comportamento degli utenti - Movimento utente e zone calde pagina]{Il comportamento degli utenti - Movimento dell'utente e zone "calde" di una pagina}
+				\label{fig:FasceDAttenzione2}
+		\end{figure}
 		
 		\subsubsection{Fasce d'attenzione}
 		
 			Per misurare il movimento fatto da utenti in una pagina web si usa la tecnica dell'\emph{eyetracking} da cui si ricava una termografia di una pagina dove le zone calde corrispondono alle dove l'utente dedica più tempo mentre quelle più fredde quelle che non vede affatto se non nella prima fase di \emph{scanning}. Le diverse termografie classiche indicano che il \textbf{punto d'entrata} di una pagina web è \textbf{in alto a sinistra}. Le fasce d'attenzione risultano quindi avere una forma a \emph{F} o a \emph{cono gelato} come si può notare nella figura ~\ref{fig:FasceDAttenzione}.
 			Nella maggioranza dei casi per ogni schermata della stessa pagina abbiamo una forma a \emph{F} nel punto in cui avviene lo \emph{scroll} si ha il \emph{blind spot} un punto cieco che non sarà mai visualizzato.
 			
-			\begin{figure}
+			\begin{figure} [h]
 				\centering
 				\includegraphics[trim={0 1pt 0 0}, width=\textwidth]{images/IlComportamentoDegliUtenti-FasceDAttenzione}
 				\caption[Il comportamento degli utenti - Termografie]{Il comportamento degli utenti - Esempi di termografie}
@@ -57,20 +64,68 @@
 			Abbiamo visto che le immagini nel web hanno un ruolo marginale rispetto al testo difatti un'immagine affiancata ad un testo perde quasi tutta l'attenzione. Nonostante questo hanno comunque una proprietà (diversa dal testo) che le rende utili se sfruttata al meglio. Innanzitutto fissiamo una taglia minimi: 210x230 pixel, più piccola sembra un'icona e c'è rischio di ingannare l'utente. Le immagini hanno un tasso di click superiore al testo, solitamente il 20\% degli utenti clicca sull'immagine. Per sfruttare questo tutte le immagini dovrebbero essere cliccabili con evento correlato, l'utente è abituato cliccarci sopra e si aspetta sempre qualcosa.
 			
 			\paragraph{Slideshow}
+				Ascoltiamo ora un esempio pratico di problemi all'interno del sito già citato varie volte \href{http://www.jcrew.com}{www.jcrew.com}.
+				Lezione tenuta dal professor Marchiori: 
+								
+				\url{https://drive.google.com/open?id=0B3-HN4UsFMNfRHZWZDVRaWh0U1E} (minuto 39:50).
 			
-		\subsubsection{Lo spostamento dell'utente}
-		
-			
+		\subsubsection{Lo spostamento dell'utente}	
+			Se capiamo gli spostamenti dell'utente possiamo andargli incontro e incrementare la facilità d'uso del nostro layout con cui esso dovrà interagire. Fortunatamente una legge matematica viene in nostro soccorso.
 		
 			\paragraph{Legge di Fitts}
+				Rappresenta il modello matematico del movimento umano in una singola dimensione (retta). La legge spiega quanto tempo impiega il cursore a spostarsi da un punto ad un altro.
 			
-				\subparagraph{Past\&clink o drag\&drop?}
+					\begin{equation}
+						\label{eqn:LeggeDiFitts}
+						T=a+b \cdot \log_2 (1+\frac{D}{W})
+					\end{equation}
+					
+					dove:
+					\begin{itemize}
+						\item $T$: è il tempo medio impiegato per concludere il movimento.
+						\item $a$: tempo costante impiegato dall'essere umano per cominciare e concludere l'azione.
+						\item $b$: covelocità, costante che dipende dagli strumenti utilizzati e dall'utente.
+						\item $D$: distanza dal punto iniziale alla zona obiettivo.
+						\item $W$: ampiezza della zona obiettivo.
+					\end{itemize}
+					Da notare che la distanza non conta molto nel tempo $T$ finale, ma pesa molto di più l'ampiezza del target finale $D$.
+			
+				\subparagraph{Past \& clink o drag \& drop?}
+					Vediamo subito un esempio pratico della legge di Fitts ~\ref{eqn:LeggeDiFitts}. Meglio \emph{past \& click} o \emph{drag \& drop}? Applicando la legge di Fitts abbiamo che la covelocità per il \emph{drag \& drop} è maggiore a causa del muscolo in tensione, per cui \emph{past \& click} è da preferire nelle interfacce web.
 			
 				\subparagraph{Implicazioni della legge di Fitts}
-				\subparagraph{Complicazioni}
+					La principale implicazione che emerge è che gli \textbf{oggetti più grandi} sono \textbf{più facili} da raggiungere e cliccare. Ecco perché i menu sono odiati, non conta solo la distanza. I menu di navigazione devono essere più bilanciati. Altra implicazione è la \emph{target size rule}: la taglia di un pulsante dovrebbe essere proporzionale alla sua frequenza d'uso. Un ottimo esempio dell'uso della \emph{target size rule} è il redesign di Microsoft Office uscito nel 2007 (figura ~\ref{fig:ImplicazioniDellaLeggeDiFitts}.
+					
+					\begin{figure} [h]
+						\centering
+						\includegraphics[width=\textwidth]{images/IlComportamentoDegliUtenti-ImplicazioniDellaLeggeDiFitts}
+						\caption[Il comportamento degli utenti - Microsoft Office dopo e prima il restyling]{Il comportamento degli utenti - Microsoft Office dopo e prima il restyling}
+						\label{fig:ImplicazioniDellaLeggeDiFitts}
+					\end{figure}
 				
-				\subparagraph{Bordi e angoli}
+				\subparagraph{Complicazioni}
+					La legge di Fitts nasce considerando una dimensione, se l'area è uguale (variabile $W$) ma ha forma diversa? Quale pulsante è il migliore? Il pulsante migliore dipende dall'angolo creato dal punto di partenza e la retta. Per cui attenzione!
+					
+			\paragraph{Interfacce e Fitts}
+				Altri esempi più fini dell'applicazione della legge di Fitts possiamo trovarli già dal primo sistema Macintosh. Il menu è fissato distante, in alto in modo da non avere problemi con l'asse y. Risultato: 5 volte più veloci in media dei menu Windows da qui poi nasceranno le \emph{task bar}. Ancora, lo strumento di \emph{scroll} su Mac ha una barra più lunga e i pulsanti sono vicini al contrario di Windows.
+				
+					\begin{figure} [h]
+						\centering
+						\includegraphics[scale=0.8]{images/IlComportamentoDegliUtenti-InterfacceEFitts}
+						\caption[Il comportamento degli utenti - Evoluzione \emph{scrollbar} su Mac]{Il comportamento degli utenti - L'evoluzione della \emph{scrollbar} su Macintosh}
+						\label{fig:InterfacceEFitts}
+					\end{figure}
+				
+				\subparagraph{Zone magiche}
+					Altri suggerimenti che nascono dalla legge di Fitts riguardano i bordi e ancora meglio gli angoli. Essi possono essere utilizzati come pulsanti d'interfaccia super efficaci perché non necessitano del tempo di frenata e l'area dell'obiettivo è molto grande a patto che l'utente non abbia una finestra ridotta sullo schermo. La figura ~\ref{fig:InterfacceEFitts} mostra esplicitamente come il sistema operativo Os X abbia sfruttato queste zone magiche per la \emph{scrollbar}. 
 				
 				\subparagraph{Menu 2.0}
+					Anche nei menu possiamo vedere molti usi della legge di Fitts.
+					\begin{description}
+						\item[Menu a pop-up:] è un'estremizzazione di Fitts, abbiamo i pulsanti vicinissimi al cursore del mouse.
+						\item[Menu circolare:] un evoluzione del \emph{menu a pop-up}, può esser completo (\emph{pie menu}) o solo in parte, da usare negli angoli soprattutto (\emph{fan menu}).
+					\end{description}
+					Tra i \emph{pie menu} e i \emph{menu lineari} non c'è dubbio che sull'usabilità vincono i primi, ma non sottovalutiamo i secondi che  per tanti elementi/comandi se combinati assieme ad altri tipi di menu possono dare risultati efficaci.
+					Ricordiamo che i primi software ad implementare i menu 2.0 sono stati i videogame, l'uso del \emph{pie menu} in Second Life lo portò ad un gran successo. In altri l'uso dei pie menu permetteva di essere il più veloci possibili producendo eventi attraverso movimenti del mouse che aprivano catene di \emph{pie menu}.
 				
 				
