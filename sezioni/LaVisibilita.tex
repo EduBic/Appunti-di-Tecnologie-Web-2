@@ -1,25 +1,101 @@
 
 \chapter{La visibilità}
+	Altra caratteristica essenziale per l'informazione all'interno di un sito è l'essere trovata. Per far ciò conta la \textbf{visibilità esterna} e questa è determinata dal posizionamento del sito sui motori di ricerca. 
+	Vedremo che è essenziale posizionarsi nella top 10 per le \emph{keyword} che ci riguardano e capiremo come promuovere un sito analizzando il funzionamento dei \emph{search engine} (SE) e l'uso che gli utenti ne fanno.
 
 	\section{Posizionamento SERP}	
+		La top 10 risultati assorbe il 95\% dei click dell'utenza dopo una ricerca.
+		\begin{enumerate}
+			\item 51\% click (il primo risultato prende più di tutte le altre!),
+			\item 16\% click;
+			\item 6\% click;
+			\item 6\% click;
+			\item 5\% click;
+			\item 4\% click;
+			\item 2\% click;
+			\item 1\% click;
+			\item 1\% click;
+			\item 2\% click (effetto \emph{black jersay} o \emph{Malabrocca}).		
+		\end{enumerate}
+		
+		Nota: le strategie che verranno illustrate in seguito non funzionano sempre, basta infatti un minimo cambiamento per cambiare il comportamento degli utenti sui risultati. Infatti le recenti introduzioni di Google sono state analizzate molto, prima di farle diventare effettive. La striscia di immagini per esempio svolgono un effetto sospensivo per trattenere l'utente e non hanno impatto sulla percezione del testo.
 	
 	\section{SMAPDEX (SEO)}
+		È l'insieme di attività svolte con lo scopo di far sì che un sito sia indicizzato da Google e occupi le posizioni più alte della SERP. Nelle seguenti sezioni prima spiegheremo il funzionamento dei motori di ricerca e poi illustreremo le tecniche per migliorare il posizionamento o addirittura ingannare il SE.
+		Il \textbf{punteggio di una pagina} è calcolato sul riferimento a due componenti delle pagine:
+		\begin{itemize}
+			\item componente \textbf{testuale};
+			\item componente \textbf{ipertestuale}.
+		\end{itemize}
 		
 		\subsection{Parte testuale}
+			Per la parte testuale si misura la qualità in base a quanto una parola è importante per una pagina. Per misurare l'importanza di una parola si utilizzano due tecniche:
+			
+			\subsubsection{Term frequency (TF)}
+				Misurare la frequenza di una parola. Ad esempio su 100 parole in una pagina 5 sono di nostro interesse per cui il TF è uguale al 5\%.
+				È ovvio che solo questa tecnica non basta per avere risultati soddisfacenti. Parole molto frequenti come articoli, congiunzioni, eccetera avrebbero un'importanza troppo alta anche se prive di significato.
+				
+			\subsubsection{Inverse document frequency}
+				È la misura dell'inverso della frequenza della parola nell'insieme dei documenti (il sito web) scalata logaritmicamente. 
+				
+				Esempio: su 1000 pagine "il" appare in 980 pagine, ha TF=98\% mentre:
+				\[
+					IDF=\log(\frac{1}{0,98})=0,008;
+				\]
+				
+				Altro esempio: su 1000 pagine la parola "pippo" ha il 10\% di frequenza, allora:
+				\[
+				IDF=\log(\frac{1}{0,1})=1;
+				\]
+				
+				Ora più rara è la parola più è alto il bonus.
+				
+			\subsubsection{Query SE}
+				Ogni \emph{query} sarà composta dalle parole con cui il SE andrà a calcolare TF e IDF nei siti web. Quelli con il valore più alto si posizioneranno più in alto.
+				Se sottoponiamo una \emph{query} con una parola $p$  il SE prende le pagine dove appare $p$ e ne calcola il TF e l'IDF. Per più parole in una \emph{query} si usa la somma del TF e IDF.
+				In questo modo alzare il punteggio di una parola può rischiare di diluire il valore e viceversa. È importante quindi selezionare un gruppo di parole e alzare il loro TFIDF a scapito di altre, queste \emph{keyword} saranno le parole che competeranno nella SERP.
 			
 		\subsection{Term spam}
+			Vediamo quindi alcune tecniche per aumentare il punteggio per le \emph{keyword} definite.
+			\begin{description}
+				\item[Body spam:] inserire le \emph{keyword} semplicemente nel body html.
+				\item[Title spam:] inserire le \emph{keyword} sul titolo delle pagine web, è una parte che l'utenza media non vedrà mai.
+				\item[Meta tag spam:] inserire le \emph{keyword} in appositi tag html (i \emph{meta}) che descrivono a \emph{keyword} la pagina. Per l'inteso sfruttamento i SE oramai ignorano questo genere di spam.
+				\item[Anchor text spam:] inserire le \emph{keyword} nel testo di un link tra i tag \emph{<a>\dots </a>}. Questo oltre al punteggio della pagina aumenta il punteggio alla pagina destinazione e il bonus viene dato con meno limiti per il TFIDF.
+				\item[URL spam:] inserire le \emph{keyword} nell'URL dell'indirizzo della pagina. Otteniamo bonus simili a quelli dell'\emph{anchor text spam}.
+			\end{description}
+			
 		
 			\subsubsection{Starter kit}
+				Abbiamo visto dove inserire le \emph{keyword}. Ora vediamo le tecniche utilizzate di come inserirle:
+				\begin{description}
+					\item[Repetition:] ripetere la \emph{keyword} stando attenti al suo TFIDF. Tecnica facile da trovare dal SE che può pure penalizzare.
+					\item[Dumping:] inserire termini rari nel testo anche se non c'entrano nulla. Otteremo un punteggio alto sul sito anche se questo non è pertinente.
+					\item[Wearing:] utilizzare pezzi di altre pagine web in cui sono inserite le nostre \emph{keyword} in modo random.
+					\item[Stitching:] \emph{past \& copy} da siti differrenti e si assembla il tutto ottenendo un contenuto rilevante. Per esempio da una risposta di un utente su un forum sviluppiamo un articolo nuovo. Più argomenti diversi danno inoltre un bonus globale e i SE fanno fatica a capire se è contenuto copiato.
+					\item[Broeding:] oltre alle \emph{keyword} fare uso di sinonimi e frasi correlate. Questo coprirà più le \emph{query} degli utenti.
+				\end{description}		
 		
 			\subsubsection{Quali keyword?}
+				Una domanda a cui la risposta probabilmente decreterà il successo di un sito. Le \emph{keyword} devono essere pensate in base a quello che cerca l'utente. Occorre un'attenta analisi prima di lanciarsi nel mondo SEO. Di seguito alcuni strumenti utili a tale scopo:
+				\begin{itemize}
+					\item \href{https://adwords.google.com/KeywordPlanner}{Google keyword tool} (a pagamento);
+					\item \href{http://keywordtool.io/}{keywordtool.io} (alternativa gratis);
+					\item \href{https://www.google.it/trends/}{Google Trends} (ottimo per capire la tendenza nel tempo);
+				\end{itemize}
 			
 		\subsection{Problema e soluzioni del term spamming}
+			Non basta potenziare la pagina se infatti questa non è utile e soffre di problemi di usabilità l'utente semplicemente abbandonerà. Se vogliamo potenziare una pagina con le tecniche di \emph{term spamming} dobbiamo nascondere in qualche modo all'utente ciò che serve ai SE.
 		
 			\subsubsection{Content hiding}
+				Il contenuto potenziante è nascosto all'utente e solo i motori di ricerca lo vedono.
 			
 			\subsubsection{Redirection}
+				Anche detta tecnica 302, consiste nel potenziare una pagina che sarà costruita con soli fini di posizionamento che indirizza alla vera pagina. In questo modo gli utenti vedranno la pagina studiata per loro mentre i SE si fermeranno a leggere la prima. Questa tecnica funziona solo con trucchetti che richiedono javascript, il \emph{meta} che reindirizza infatti è riconosciuto dai SE. Con l'uso di javascript il \emph{meta} verrà aggiunto dinamicamente mentre i SE, per costi di risorse, non eseguono il codice. Tuttavia ad oggi i SE leggono il codice javascript e cercano se esiste questa tecnica, per ingannarli è sufficiente offuscare un po' il codice.
 			
 			\subsubsection{Cloaking}
+				Controlla l'accesso alla pagina per capire se chi visita è un bot o un umano. Se questo è un bot li presento una pagina apposita diversa da quella mostrata all'utente. È una tecnica difficile da scoprire tanto che Google la penalizza moltissimo se segnalata ma questo avviene solo tramite intervento umano.
+			
 	
 		\subsection{Parte ipertestuale: pagerank}
 		
