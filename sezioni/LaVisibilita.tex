@@ -98,18 +98,76 @@
 			
 	
 		\subsection{Parte ipertestuale: pagerank}
+			Il punteggio delle pagine web è affidato anche ai link di ipertesto: il \emph{pagerank}. Ad ogni pagina $\pi_v$ era affidato un punteggio pari a:
+				\[
+					\pi_v=\sum_{(\omega, v) \in E}\frac{\pi_{\omega}}{d_w}
+				\]
+			Dove:
+			\begin{itemize}
+				\item $\omega$, $v$ è un link da $\omega$ a $v$;
+				\item $d_\omega$ è il numero di link uscenti.
+			\end{itemize}
+			Ossia, se una pagina $\omega$ ha un link verso un'altra pagina un certo punteggio viene dato quest'ultima.
+			Come vincolo abbiamo:
+			\[
+				\sum\pi_v=1
+			\]
+			
+			Questo calcolo di \emph{pagerank} molto naive era molto facile da manipolare con gli stratagemmi visti in precedenza, si è deciso quindi di farne una riformulazione.
 		
-			\subsubsection{Catene di Markov}
+			\subsubsection{Le catene di Markov e il random walk}
+				La riformulazione avviene sfruttando l'algebra lineare e speciali matrici dette catene di Markov che godono di alcune proprietà unite alla teoria della probabilità. Il \emph{pagerank} di una pagina web diventa quindi la probabilità di entrare in quella pagina da altre pagine.
+				Per rendere più chiaro il concetto si può pensare ad una scimmia  (un \emph{rando surfer}) che naviga il web in modo del tutto casuale, la probabilità che la scimmia entri in una pagina ne determina il suo punteggio.
+				
+				Esempio:
+					dato il seguente grafo i nodi che rappresentano pagine e gli archi i link:
+					$A \longleftrightarrow B \longleftrightarrow C$,
+					
+					B ottiene il 50\% del flusso mentre A e C il 25\%.
+					
+				Il \emph{random surfer} è un altro fattore su cui tener conto ma attenzione esso non rispecchia esattamente gli intenti degli utenti che non navigano totalmente a caso.
 			
 			\subsubsection{Problemi: spider traps e island}
+				Per attuare il sistema spiegato in precedenza c'è la necessità di far girovagare questi \emph{random surfer} (i famosi \emph{spider}) che raccolgono dati da cui calcolare il \emph{pagerank}. La navigazione casuale da pagina a pagina può rivelarsi fatale in alcuni casi.
+				\begin{description}
+					\item[Spider traps:] nel caso in cui uno spider rimanga intrappolato all'interno di un sito in cui pagine continuano a indirizzare ad altre pagine in un ciclo infinito (si pensi ad un calendario online).
+					\item[Island:] esistono poi casi in cui alcuni pezzi di rete sono isolati dagli altri, dei veri e propri micro-web indipendenti in cui per gli \emph{spider} non c'è alcun modo di passare. 
+				\end{description}
 				
 		\subsection{Pagerank 2.0}
+			A seguito dei problemi prima elencati si è cercato un'altra soluzione: il teletrasporto. La formula quindi cambia in:
+			\[
+				\pi_v=(1-\epsilon)\cdot(\sum_{(\omega, v) \in E}\frac{\pi_{\omega}}{d_w})+\frac{\epsilon}{N}
+			\]
+			Nella pratica si è aumentata la casualità. Ora la scimmia ha anche un dado, con una certa probabilità da come spiegato in precedenza con un'altra probabilità effettua il teletrasporto in un'altra pagina casuale (da notare un comportamento ancora più incoerente con quello fatto dagli utenti).
+			
+			In questo modo grazie al \textbf{fattore di teleporting} $\epsilon$ risolviamo \emph{spider traps} e \emph{island}; più questo fattore è verso il 100\% e più il punteggio in probabilità alle pagine diventa uguale per tutte, viceversa più è verso lo 0 e più il \emph{pagerank} si avvicina a quello calcolato in precedenza.
+			
+			Un altro modo per il calcolo del \emph{pagerank} è il \emph{total rank}:
+			\[
+				T=\int_0^1r(\alpha) d\alpha
+			\]
+			
 		
 			\subsubsection{Problema: dead ends}
+				Nonostante l'introduzione del teletrasporto rimane il problema (prima non illustrato) delle \emph{dead ends}. Con questa formula l'egoismo paga, un sito è meglio che mantenga i link al suo interno.
+				
+				La soluzione a cui sono arrivati i moderni motori di ricerca è calcolare l'importanza su altro per ogni sito e pagina web e non sul vero web. (vedere sezione Web semantico)
 		
 		\subsection{Fattori fondamentali}
+			Vediamo ora i fattori che influenzano il \emph{pagerank} con l'uso del teletrasporto.
 		
 			\subsubsection{Inlink}
+				Link entranti alla pagina. Per incrementare il \emph{pagerank} di una pagina dobbiamo fare in modo che questa sia puntata dal maggior numero di pagine esterne. Alcune tecniche per fare ciò sono:
+				\begin{description}
+					\item[Infiltration:] infiltrarsi in altri siti e mettere link alla pagina da potenziare (commenti spam etc.).
+					\item[Honey pot:] creare contenuto appetibile e utile che riceve link (è il modo giusto di aumentare il \emph{pagerank}). Molto spesso questo contenuto è vittima del \emph{copy \& past}.
+					\item[Link exchange:] allearsi con altri per scambiarsi link.
+					\item[Resurrection:] acquistare domini defunti con \emph{pagerank} abbastanza alto. Il \emph{pagerank} infatti non decade mai e resta legato al dominio, inoltre l'età del dominio conta come bonus. Esistono interi business per la vendita di domini defunti ma appetibili per il proprio \emph{pagerank}.
+				\end{description}
+				
+				\subsubsection{Marketing 2.0}
+				Un esempio nella storia del web di quanto siano importanti gli \emph{inlink} arriva dalla pagina \href{http://www.milliondollarhomepage.com/}{million dollar page}. Una schermata di pixel venduta a 1 dollaro l'uno, il punto forte per cui tutti si affrettarono di acquistare almeno 1 pixel fu la presenza di tutti i link che puntavano alla pagina resa famosa dall'originale idea dell'autore. La pagina diventò una vera e propria cascata di flusso per il \emph{pagerank} ed ogni link al suo interno ne acquistava un po' ad un prezzo ridicolo.
 			
 			\subsubsection{Outlink}
 			
