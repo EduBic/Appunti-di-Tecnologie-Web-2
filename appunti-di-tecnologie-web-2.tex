@@ -9,11 +9,16 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{etaremune}
+\usepackage[toc,page]{appendix}
 
 \usepackage[hidelinks, colorlinks=true]{hyperref}	
 \usepackage{bookmark}
 \usepackage{caption}
+\usepackage{subfig}
+
 \captionsetup{tableposition=top, figureposition=bottom, font=small}
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
 
 
 \usepackage{epigraph}
@@ -34,6 +39,7 @@
 			%sezioni/ProblematicheDellInformazione,%
 			sezioni/MobileWeb,%
 			%sezioni/SocialWeb,%
+			appendici/AnalisiUsabilitaSito,
 			%appendici/CookieLaw,%
 			%appendici/EyeTrackIII,%
 			%appendici/WebSpamTaxonomy,%
@@ -77,7 +83,7 @@
 
 \include{sezioni/LaVisibilita}
 
-%\include{sezioni/}
+%\include{sezioni/IlNomeGiusto}
 
 %\include{sezioni/}
 
@@ -87,7 +93,9 @@
 
 %\include{sezioni/}
 
-%\include{sezioni/}
+\begin{appendices}
+
+\include{appendici/AnalisiUsabilitaSito}
 
 %\include{sezioni/}
 
@@ -98,6 +106,10 @@
 %\include{sezioni/}
 
 %\include{sezioni/}
+
+%\include{sezioni/}
+
+\end{appendices}
 
 
 \end{document}	

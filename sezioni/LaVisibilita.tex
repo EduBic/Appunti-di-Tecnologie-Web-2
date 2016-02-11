@@ -1,5 +1,6 @@
 
-\chapter{La visibilità}
+È\chapter{La visibilità}
+
 	Altra caratteristica essenziale per l'informazione all'interno di un sito è l'essere trovata. Per far ciò conta la \textbf{visibilità esterna} e questa è determinata dal posizionamento del sito sui motori di ricerca. 
 	Vedremo che è essenziale posizionarsi nella top 10 per le \emph{keyword} che ci riguardano e capiremo come promuovere un sito analizzando il funzionamento dei \emph{search engine} (SE) e l'uso che gli utenti ne fanno.
 
@@ -154,8 +155,12 @@
 				
 				La soluzione a cui sono arrivati i moderni motori di ricerca è calcolare l'importanza su altro per ogni sito e pagina web e non sul vero web. (vedere sezione Web semantico)
 		
-		\subsection{Fattori fondamentali}
-			Vediamo ora i fattori che influenzano il \emph{pagerank} con l'uso del teletrasporto.
+		\subsection{Migliorare il pagerank}
+			Esistono due fattori fondamentali che influenzano il \emph{pagerank} con l'uso del teletrasporto:
+			\begin{itemize}
+				\item Inlink;
+				\item Outlink.
+			\end{itemize}
 		
 			\subsubsection{Inlink}
 				Link entranti alla pagina. Per incrementare il \emph{pagerank} di una pagina dobbiamo fare in modo che questa sia puntata dal maggior numero di pagine esterne. Alcune tecniche per fare ciò sono:
@@ -166,23 +171,133 @@
 					\item[Resurrection:] acquistare domini defunti con \emph{pagerank} abbastanza alto. Il \emph{pagerank} infatti non decade mai e resta legato al dominio, inoltre l'età del dominio conta come bonus. Esistono interi business per la vendita di domini defunti ma appetibili per il proprio \emph{pagerank}.
 				\end{description}
 				
-				\subsubsection{Marketing 2.0}
-				Un esempio nella storia del web di quanto siano importanti gli \emph{inlink} arriva dalla pagina \href{http://www.milliondollarhomepage.com/}{million dollar page}. Una schermata di pixel venduta a 1 dollaro l'uno, il punto forte per cui tutti si affrettarono di acquistare almeno 1 pixel fu la presenza di tutti i link che puntavano alla pagina resa famosa dall'originale idea dell'autore. La pagina diventò una vera e propria cascata di flusso per il \emph{pagerank} ed ogni link al suo interno ne acquistava un po' ad un prezzo ridicolo.
+				\paragraph{Marketing 2.0}
+					Un esempio nella storia del web di quanto siano importanti gli \emph{inlink} arriva dalla pagina \href{http://www.milliondollarhomepage.com/}{million dollar page}. Una schermata di pixel venduta a 1 dollaro l'uno, il punto forte per cui tutti si affrettarono di acquistare almeno 1 pixel fu la presenza di tutti i link che puntavano alla pagina resa famosa dall'originale idea dell'autore. La pagina diventò una vera e propria cascata di flusso per il \emph{pagerank} ed ogni link al suo interno ne acquistava un po' ad un prezzo ridicolo.
 			
 			\subsubsection{Outlink}
+				Passiamo ora ai link uscenti. Posizionando un link esterno in una pagina un po' di flusso di \emph{pagerank} esce dalla pagina. In questo modo è garantita la \textbf{solidità}, l'aggiunta di \emph{outlink} non alza il punteggio e lo \emph{smapdex} non può essere locale.
+				Questo controintuitivamente non risulta essere vero! Con la presenza di \emph{outlink} posso aumentare il \emph{pagerank} della mia pagina con dinamiche imprevedibili. Ciò deriva dalla presenza del \emph{fattore di teleporting}.
 			
 			\subsubsection{Spam farm}
+				Esistono numerose tecniche per usare gli \emph{outlink} e gli \emph{inlink} per aumentare il \emph{pagerank}. Nascono le \emph{spam farm} strutture apposite studiate di link e pagine per l'incremento del punteggio nei vari SE. 
+				Una \emph{spam farm} ottimale singola consiste in una pagina o più pagine, definite pagine \textbf{target}, puntate da link bidirezionali da altre pagine, definite pagine \textbf{potenzianti}. Un struttura ottimale inoltre presenta la proprietà di \emph{reachability}, ovvero se gli spider dei SE raggiungono la pagina \emph{target} attraverso una pagina \emph{potenziante} allora tutta la \emph{spam farm} diventa raggiungibile (vedere figura ~\ref{fig:LaVisibilita-SpamFarm1}).
 				
-				\paragraph{Contromisure SE}
+				\begin{figure} [h]
+					\centering
+					\includegraphics[scale=0.9]{images/LaVisibilita-SpamFarm1}
+					\caption{La visibilità - Esempi spam farm singole ottimali}
+					\label{fig:LaVisibilita-SpamFarm1}
+				\end{figure}
+				
+				\paragraph{Alleanze}
+					Il modo migliore per sfruttare le \emph{spam farm} è sfruttare alleanze con altri siti internet. Le alleanze tra siti (due e più) possono essere di tipo:
+					\subparagraph{Alleanza profonda}
+						Le pagine target distribuiscono il flusso sulle pagine potenzianti dell'altro sito (figura ~\ref{fig:LaVisibilita-SpamFarm2}) creando una media dei \emph{pagerank} stabile.
+						
+					\begin{figure} [h]
+						\centering
+						\includegraphics[scale=1]{images/LaVisibilita-SpamFarm2}
+						\caption{La visibilità - Spam farm alleanza profonda}
+						\label{fig:LaVisibilita-SpamFarm2}
+					\end{figure}
+						
+					\subparagraph{Alleanza superficiale}
+						Le pagine target dei due siti sono connesse con link (figura ~\ref{fig:LaVisibilita-SpamFarm3}, il \emph{pagerank} ottenuto risulta essere più del massimo delle due pagine target prima della connessione.
+					
+				\begin{figure} [h]
+					\centering
+					\includegraphics[scale=1]{images/LaVisibilita-SpamFarm3}
+					\caption{La visibilità - Spam farm alleanza superficiale}
+					\label{fig:LaVisibilita-SpamFarm3}
+				\end{figure}
+				
+					\subparagraph{Alleanze Ring}
+						Alleanza che comprende più di due siti. Le pagine target indicizzano in un percorso circolare la pagina target successiva creando una sorta di anello (figura ~\ref{fig:LaVisibilita-SpamFarm4}).
+						
+				\begin{figure} [h]
+					\centering
+					\includegraphics[scale=1]{images/LaVisibilita-SpamFarm4}
+					\caption{La visibilità - Spam farm alleanza ring}
+					\label{fig:LaVisibilita-SpamFarm4}
+				\end{figure}
+				
+					\subparagraph{Alleanza complete core}
+						Potenziamento della \emph{spam farm} di tipo \emph{ring}, la struttura bidirezionale è più vantaggiosa. Ora ogni pagina target ha link entrante e uscenti verso le due pagine target più vicine (figura ~\ref{fig:LaVisibilita-SpamFarm5}). Per fare un core basta un grafo fortemente connesso.
+				
+				\begin{figure} [h]
+					\centering
+					\includegraphics[scale=0.6]{images/LaVisibilita-SpamFarm5}
+					\caption{La visibilità - Spam farm alleanza complete core}
+					\label{fig:LaVisibilita-SpamFarm5}
+				\end{figure}
+				
+			\subsubsection{Contromisure SE}
+				Ovviamente le \emph{spam farm} sono azioni penalizzate dai SE poiché ingannano la misura del \emph{pagerank}. I motori di ricerca controbattono quindi cercando di identificare queste unioni rivelando l'esistenza di grafi fortemente connessi. Questi grafi dipendono dal modo con cui l'alleanza si è creata e dal numero di partecipanti ad asse. Visto il numero enorme di combinazioni fu creata un'enciclopedia delle sequenze. Purtroppo in ogni sequenza il numero di collegamenti da controllare cresce enormemente in base al numero di partecipanti (N), per:
+				\begin{itemize}
+					\item N=3 $\rightarrow$ 18 collegamenti;
+					\item N=4 $\rightarrow$ 1606 collegamenti;
+					\item N=5 $\rightarrow$ 565080 collegamenti;
+					\item \dots
+				\end{itemize}
+				Non esiste nessuna formula che calcoli il risultato di collegamenti dato un numero N di partecipanti. Inoltre il costo computazionale risulta dispendiosissimo. Si sono quindi cercate soluzioni "laterali" più sofisticate.
+				
+				Un modo consiste in calcolare il vecchio \emph{pagerank} e confrontarlo con quello nuovo. Se il rapporto tra le due misure risulta troppo alto significa che la pagina analizzata è potenziata. È stato stimato che il successo di questa tecnica si trova tra il 95\% e 100\%.				
+				
+				Un altro modo consiste nel basarsi sulla \textbf{forma del web}: la struttura di alto livello a papillon (figura ~\ref{fig:LaVisibilita-FormaWeb}). L'idea è di analizzare la forma di un sito web, se questa non rispecchia ed ha valori al di fuori della media nella norma globale dei siti web allora il sito è sospetto e avviene un controllo più approfondito.
+				Nella figura ~\ref{fig:LaVisibilita-ContromisureSE1} vediamo la zona creata dai link entranti nei siti nel web globale che rappresenta la norma. I punti situati all'esterno (evidenziati dall'ellisse) sono siti di cui si sospetta il potenziamento. Nella figura ~\ref{fig:LaVisibilita-ContromisureSE2} invece vediamo i link uscenti. 
+				
+				\begin{figure}
+					\centering
+					\includegraphics[scale=0.6]{images/LaVisibilita-FormaWeb}
+					\caption{La visibilità - Forma ad alto livello del web}
+				\end{figure}								
+				
+				\begin{figure} [h]
+					\subfloat[][\emph{Distribuzione link entranti}.]
+						{\includegraphics[width=.48\textwidth]{images/LaVisibilita-ContromisureSE1}} \quad
+					\subfloat[][\emph{Distribuzione link uscenti}.]
+						{\includegraphics[width=.48\textwidth]{images/LaVisibilita-ContromisureSE2}}
+					\caption{La visibilità - Rappresentazioni grafiche dei link nel web}
+					\label{fig:LaVisibilita-FormaWeb}
+				\end{figure}
 			
 		\subsection{Pagerank 3.0}
+			Negli ultimi anni si è voluto migliorare la formula del \emph{pagerank} in particolare il fattore di teleporting.
+			
+			La vecchia formula (qui riporta in una versione leggermente diversa):
+			\[
+				(1-\epsilon )\cdot 1^T N + \epsilon L
+			\]
+			possiamo scriverla usando la matrice $P$ e diventa:
+			\[
+				(1- \epsilon )\cdot 1^T N + PL
+			\]
+			$P$ è una matrice che permette il \emph{pagerank} personalizzato. Ogni nodo è pesato con preferenze così rendiamo il teletrasporto meno stupido. In questo modo però sorgono proprebli riguardanti la libertà e la censura. Se infatti l'utente delle preferenze è il SE di turno potrebbe volutamente alzare il \emph{pagerank} ad alcuni siti e abbassarlo ad altri. 
+			
+			È noto che Google personalizza la bontà di un sito, alcune sono addirittura fatte a mano! \emph{Searchking}, competitor di Google, è stato penalizzato in questo modo e il ricorso legale ha rivelato come il \emph{pagerank} sia soltanto un'opinione.
+			Con questo nuovo livello di \emph{pagerank} quindi possiamo dichiarare defunta la democrazia contenuta in esso.
 		
 			\subsubsection{Pagerank personalizzato}
 			
+				Il \emph{pagerank} personalizzato però non è disponibile soltanto ai SE ma anche all'utente. Ogni profilo personale di ogni utente calcola un \emph{pagerank} personalizzato in base a tutti i dati raccolti su di lui (vedi tutte le piattaforme Google disponibili che ogni giorno utilizziamo tutti).  In questo modo i risultati di ricerca varieranno in base ai suoi interessi.
+				Ma come calcolare questo \emph{pagerank} personalizzato? Se restringiamo a soli due valori "sì" e "no" abbiamo con $N$ utenti: $2^N$ personalizzazioni. Troppe\dots
+				Il \emph{pagerank} è linearmente componibile nello spazio delle possibilità per cui potremmo calcolarlo per $N$ utenti $N$ \emph{pagerank} personalizzati. Ancora troppi calcoli\dots
+				
+				La soluzione quindi è selezionare un certo numero di \emph{keyword} e \emph{topic}. Creare dei profili che approssimano gli utenti e su questo numero limitato calcolare il \emph{pagerank} personalizzato diviso a categorie a sua volta divise secondo necessità. Combinando i \emph{pagerank} precalcolati traccio il profilo degli utenti. Si fa notare che ogni \emph{pagerank} personalizzato è compatibile con le contromisure, questo comporta disturbi e limitazioni alle ottimizzazioni SEO.
+			
 			\subsubsection{Bontà di una pagina: doppio ranking}
+				Fino a poco tempo fa il \emph{pagerank} costituiva un punteggio positivo che coesisteva con le contromisure dei SE per penalizzarlo. 
+				Le alterazioni e gli attacchi nel web però resero le contromisure non più sufficienti per questo si è deciso di affiancare al normale \emph{pagerank} positivo un \emph{pagerank} opposto: un punteggio negativo.
 			
 			\subsubsection{Janus Graph}
-			
+				Per ricorrere a questa nuova misura bisognava mantenere il modello sottostante sempre uniforme e semplice, si è quindi ricorso al \textbf{grafo di Giano}.
+				Il \emph{Janus Graph} è un grafo in cui ogni nodo ha due valori associati:
+				\begin{itemize}
+					\item $W^+$ per la parte positiva;
+					\item $W^-$ per la parte negativa.	
+				\end{itemize}	
+				$W^+$ e $W^-$ sono due dati totalmente scorrelati. Il \emph{pagerank} finale è ottenuto dalla combinazione della parte buona e dalla parte cattiva.
+									
 			\subsubsection{Parte positiva \& parte negativa}
 			
 				\paragraph{Email with web}
