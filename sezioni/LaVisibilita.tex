@@ -1,7 +1,7 @@
 
-È\chapter{La visibilità}
+\chapter{La visibilità}
 
-	Altra caratteristica essenziale per l'informazione all'interno di un sito è l'essere trovata. Per far ciò conta la \textbf{visibilità esterna} e questa è determinata dal posizionamento del sito sui motori di ricerca. 
+È	Altra caratteristica essenziale per l'informazione all'interno di un sito è l'essere trovata. Per far ciò conta la \textbf{visibilità esterna} e questa è determinata dal posizionamento del sito sui motori di ricerca. 
 	Vedremo che è essenziale posizionarsi nella top 10 per le \emph{keyword} che ci riguardano e capiremo come promuovere un sito analizzando il funzionamento dei \emph{search engine} (SE) e l'uso che gli utenti ne fanno.
 
 	\section{Posizionamento SERP}	
@@ -272,7 +272,7 @@
 			\[
 				(1- \epsilon )\cdot 1^T N + PL
 			\]
-			$P$ è una matrice che permette il \emph{pagerank} personalizzato. Ogni nodo è pesato con preferenze così rendiamo il teletrasporto meno stupido. In questo modo però sorgono proprebli riguardanti la libertà e la censura. Se infatti l'utente delle preferenze è il SE di turno potrebbe volutamente alzare il \emph{pagerank} ad alcuni siti e abbassarlo ad altri. 
+			$P$ è una matrice che permette il \emph{pagerank} personalizzato che sostituisce il teletrasporto. Ogni nodo è pesato con preferenze così rendiamo il teletrasporto meno stupido. In questo modo però sorgono problemi riguardanti la libertà e la censura. Se infatti l'utente delle preferenze è il SE di turno, potrebbe volutamente alzare il \emph{pagerank} ad alcuni siti e abbassarlo ad altri. 
 			
 			È noto che Google personalizza la bontà di un sito, alcune sono addirittura fatte a mano! \emph{Searchking}, competitor di Google, è stato penalizzato in questo modo e il ricorso legale ha rivelato come il \emph{pagerank} sia soltanto un'opinione.
 			Con questo nuovo livello di \emph{pagerank} quindi possiamo dichiarare defunta la democrazia contenuta in esso.
@@ -296,10 +296,71 @@
 					\item $W^+$ per la parte positiva;
 					\item $W^-$ per la parte negativa.	
 				\end{itemize}	
-				$W^+$ e $W^-$ sono due dati totalmente scorrelati. Il \emph{pagerank} finale è ottenuto dalla combinazione della parte buona e dalla parte cattiva.
+				$W^+$ e $W^-$ sono due dati totalmente scorrelati. Il \emph{pagerank} finale è ottenuto dalla combinazione della parte buona e dalla parte cattiva, rispettivamente:
+				\[
+					R_{good}(G^+) \text{  \&  } R_{bad}(G^-)
+				\]
+				La combinazione è lineare, per cui:
+				\[
+					\alpha R_{good}(G^+)-\beta R_{bad}(G^-)
+				\]
+				Come calcolare però le due funzioni di \emph{ranking}? Quali valori dare ai due pesi individuati?
 									
-			\subsubsection{Parte positiva \& parte negativa}
+			\subsubsection{Parte buona \& parte cattiva (*)}
+				Soluzione al problema di \textbf{doppio ranking}:
+				Dato un \emph{ranking} $R$ definiamo \emph{janus extension} $R^J$. Le due parti quindi sono \textbf{simmetriche} e \textbf{duali}, entrambe riflettono la struttura del web. Invertiamo la struttura del web e identifichiamola con $G^\#$ (metaforicamente può essere associata alla parte infernale del web).
+				Calcoliamo $R^J$:
+				\[
+					R^J = R(G^+) - R((G^\#)^-)
+				\]
+				Dove:
+				\begin{itemize}
+					\item $R(G^+)$ rappresenta il \emph{pagerank} positivo;
+					\item $R((G^\#)^-)$ rappresenta il web ribaltato su cui calcolo la parte negativa.
+				\end{itemize}
+				Un \textbf{vantaggio} di questa tecnica di calcolo è una sola misura da ottimizzare. Di \textbf{contro} però dobbiamo cercare altro spazio informativo da cui attingere per i valori di $W^+$ e $W^-$.
 			
 				\paragraph{Email with web}
+					Quale spazio migliore se non quello che viaggia parallelamente al web? Le email anche se staccate contengono preziose informazioni per il web classico. Inoltre anche lo spazio delle email può essere visto come un'immensa rete:
+					\begin{itemize}
+						\item Ogni \textbf{indirizzo mail} è un nodo.
+						\item Le \textbf{mail} inviate invece sono archi.
+					\end{itemize}
+					Proprio come le pagine con i link! Questo è solo una descrizione superficiale, si può andare molto più a fondo e specificare meglio il grafo (per esempio sfruttando anche i contatti di una casella di posta).
+					Arriviamo al passo importante, integriamo il web classico alla rete delle mail. Se una mail contiene un qualche URL ho il collegamento! Viceversa vale lo stesso se una pagina contiene un indirizzo mail. Così si ottiene una super estensione dello spazio web.
+					
+					
+				\paragraph{Riempiamo il Janus graph}
+				Usiamo quindi queste nuove informazioni:
+					\begin{description}
+						\item[Parte positiva:] 
+							\begin{itemize}
+								\item \emph{Activeness}: un indirizzo email più attivo dà più valore.
+								\item \emph{history}: una pagina web aggiornata conta di più.
+								\item età: l'età del dominio, applicabile anche alle mail.
+							\end{itemize}
+						\item[Parte negativa:] ogni volta che una mail è classificata come \emph{spam} lo spazio che la ospita acquisisce valore negativo così come gli URL delle pagine che contiene acquisiranno negatività.
+					\end{description}
+					
+					I vantaggi che portano la mail sono:
+					\begin{itemize}
+						\item È più probabile che siano scritte a mano.
+						\item È più facile tracciare l'informazione che è più pura e autentica.
+						\item È più facile distinguere comportamenti reali da artificiali mentre nel web è difficile il controllo.
+					\end{itemize}
+					Di contro l'analisi è più difficile perché il fattore negativo arriva da flussi di cui non abbiamo niente a che fare: il \emph{pagerank} cambia con eventi legati al solo \emph{spam} delle mail.
+					
 				
 				\paragraph{Altre estensioni: SIS}
+					Lo spazio informativo non si ferma alle mail. Si può estendere considerando anche l'identità delle persone: SIS (\emph{Social Information System}).
+					Lo spazio informativo quindi si espande considerando il sistema sociale. Ogni oggetto ha un lato positivo e un lato negativo e anche una persona. Per tenere traccia di questo si utilizza un codice univoco: un UID (\emph{User Identifier}) che corrisponde ad un'identità univoca. Otteniamo così anche un \emph{social rank}.
+					
+					Ad ogni pagina posso associare anche le persone che ci stanno dietro e scegliere se conta di più un flusso uguale in misura ma che coinvolge molte persone o, viceversa, poche persone. Negli ultimi anni si sta cercando di passare dal \emph{ranking} normale al \emph{social ranking} per avere più controllo e aumentare le contromisure, ad esempio le \emph{spam farm}. Questo è uno dei motivi per cui ci sono sempre più interessi a togliere lo schermo della privacy.
+					Le assunzioni cadono:
+					\begin{itemize}
+						\item l'unità di una pagina non c'è più e può essere considerata in pezzi diversi dei rispettivi autori.
+						\item la struttura di navigazione del web non ha più cammini uniti ma questi possono rompersi.
+					\end{itemize}
+					
+				\subsubsection{Email 2.0: andiamo oltre}
+					Non solo la rete delle mail ma in futuro avremo un campo informativo vastissimo, siti social, siti di new, wiki, twitter e tanti altri verranno trattati in modo diversi, spazi informativi che possono unirsi allo spazio del web usando principi sociali integrati nel SE. Un esempio è l'informazione raccolta dai sistemi Android, come l'uso del dal \emph{Play store}.
