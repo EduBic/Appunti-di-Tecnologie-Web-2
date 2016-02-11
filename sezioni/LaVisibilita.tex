@@ -280,10 +280,10 @@
 			\subsubsection{Pagerank personalizzato}
 			
 				Il \emph{pagerank} personalizzato però non è disponibile soltanto ai SE ma anche all'utente. Ogni profilo personale di ogni utente calcola un \emph{pagerank} personalizzato in base a tutti i dati raccolti su di lui (vedi tutte le piattaforme Google disponibili che ogni giorno utilizziamo tutti).  In questo modo i risultati di ricerca varieranno in base ai suoi interessi.
-				Ma come calcolare questo \emph{pagerank} personalizzato? Se restringiamo a soli due valori "sì" e "no" abbiamo con $N$ utenti: $2^N$ personalizzazioni. Troppe\dots
-				Il \emph{pagerank} è linearmente componibile nello spazio delle possibilità per cui potremmo calcolarlo per $N$ utenti $N$ \emph{pagerank} personalizzati. Ancora troppi calcoli\dots
+				Ma come calcolare questo \emph{pagerank} personalizzato per ogni utente nel web!? Se restringiamo a soli due valori: "sì" e "no" abbiamo con $N$ pagine: $2^N$ personalizzazioni. Troppe\dots
+				Il \emph{pagerank} per fortuna ha laproprietà di essere linearmente componibile rispetto le probabilità; cioè se ho 100 pagine calcolate e risultanti "sì" e da un'altra parte ho altre 100 pagine calcolate e risultanti "sì" per calcolare il\emph{pagerank} delle 200 pagine mi basta unire i risultati. Grazie a questa proprietà possiamo calcolare per $N$ pagine $N$ \emph{pagerank} personalizzati. Sono ancora troppi calcoli\dots $N$ è la taglia del web, miliardi di miliardi di pagine web!
 				
-				La soluzione quindi è selezionare un certo numero di \emph{keyword} e \emph{topic}. Creare dei profili che approssimano gli utenti e su questo numero limitato calcolare il \emph{pagerank} personalizzato diviso a categorie a sua volta divise secondo necessità. Combinando i \emph{pagerank} precalcolati traccio il profilo degli utenti. Si fa notare che ogni \emph{pagerank} personalizzato è compatibile con le contromisure, questo comporta disturbi e limitazioni alle ottimizzazioni SEO.
+				La soluzione quindi è il \emph{topic pagerank}, selezionare un certo numero di \emph{keyword} e \emph{topic}. Creare dei profili che approssimano gli utenti e su questo numero limitato calcolare il \emph{pagerank} personalizzato diviso a categorie a sua volta divise in \emph{topic} più precisi secondo le necessità. Combinando i \emph{pagerank} precalcolati traccio il profilo degli utenti. Da questi profili "grezzi" si calcolano i profili astratti che li conterranno e andranno a modificare il \emph{pagerank} in base alle ricerche dell'utente. Si fa notare che ogni \emph{pagerank} personalizzato è compatibile con le contromisure ma comporta disturbi e limitazioni alle ottimizzazioni SEO.
 			
 			\subsubsection{Bontà di una pagina: doppio ranking}
 				Fino a poco tempo fa il \emph{pagerank} costituiva un punteggio positivo che coesisteva con le contromisure dei SE per penalizzarlo. 
@@ -302,23 +302,25 @@
 				\]
 				La combinazione è lineare, per cui:
 				\[
-					\alpha R_{good}(G^+)-\beta R_{bad}(G^-)
+					\alpha R_{good}(G^+) - \beta R_{bad}(G^-)
 				\]
+				Con $\alpha$ e $\beta$ pesi costanti.
+				
 				Come calcolare però le due funzioni di \emph{ranking}? Quali valori dare ai due pesi individuati?
 									
 			\subsubsection{Parte buona \& parte cattiva (*)}
 				Soluzione al problema di \textbf{doppio ranking}:
-				Dato un \emph{ranking} $R$ definiamo \emph{janus extension} $R^J$. Le due parti quindi sono \textbf{simmetriche} e \textbf{duali}, entrambe riflettono la struttura del web. Invertiamo la struttura del web e identifichiamola con $G^\#$ (metaforicamente può essere associata alla parte infernale del web).
+				Dato un \emph{ranking} $R$ definiamo \emph{janus extension} $R^J$. Le due parti quindi sono \textbf{simmetriche} e \textbf{duali}, entrambe riflettono la struttura del web. Invertiamo la struttura del web e identifichiamola con $G^\#$, se un link andava da A a B adesso va da B ad A.
 				Calcoliamo $R^J$:
 				\[
 					R^J = R(G^+) - R((G^\#)^-)
 				\]
 				Dove:
 				\begin{itemize}
-					\item $R(G^+)$ rappresenta il \emph{pagerank} positivo;
-					\item $R((G^\#)^-)$ rappresenta il web ribaltato su cui calcolo la parte negativa.
+					\item $R(G^+)$ rappresenta il \emph{pagerank} positivo calcolato come spiegato in precedenza;
+					\item $R((G^\#)^-)$ rappresenta il web ribaltato su cui calcolo la parte negativa (vedremo più avanti come calcolarla).
 				\end{itemize}
-				Un \textbf{vantaggio} di questa tecnica di calcolo è una sola misura da ottimizzare. Di \textbf{contro} però dobbiamo cercare altro spazio informativo da cui attingere per i valori di $W^+$ e $W^-$.
+				Un \textbf{vantaggio} di questa tecnica di calcolo è una sola misura da ottimizzare perché riutilizziamo la misura che abbiamo già per creare il suo riflesso. Di \textbf{contro} però dobbiamo cercare altro spazio informativo da cui attingere per i valori di $W^+$ e $W^-$.
 			
 				\paragraph{Email with web}
 					Quale spazio migliore se non quello che viaggia parallelamente al web? Le email anche se staccate contengono preziose informazioni per il web classico. Inoltre anche lo spazio delle email può essere visto come un'immensa rete:
@@ -332,15 +334,13 @@
 					
 				\paragraph{Riempiamo il Janus graph}
 				Usiamo quindi queste nuove informazioni:
-					\begin{description}
-						\item[Parte positiva:] 
+						\subparagraph{Parte positiva:}
 							\begin{itemize}
-								\item \emph{Activeness}: un indirizzo email più attivo dà più valore.
+								\item \emph{activeness}: un indirizzo email più attivo dà più valore.
 								\item \emph{history}: una pagina web aggiornata conta di più.
 								\item età: l'età del dominio, applicabile anche alle mail.
 							\end{itemize}
-						\item[Parte negativa:] ogni volta che una mail è classificata come \emph{spam} lo spazio che la ospita acquisisce valore negativo così come gli URL delle pagine che contiene acquisiranno negatività.
-					\end{description}
+						\subparagraph{Parte negativa:} ogni volta che una mail è classificata come \emph{spam} lo spazio che la ospita acquisisce valore negativo così come gli URL delle pagine che contiene acquisiranno negatività.
 					
 					I vantaggi che portano la mail sono:
 					\begin{itemize}
