@@ -1,33 +1,137 @@
 
 \chapter{Il nome giusto}
-
-	\section{Scegliere il nome e l'indirizzo web}
+	Nel web, ma anche in generale, la scelta del nome è fondamentale. L'impatto del nome arriva fino al 50\% di varianza d'impatto nel pubblico. La media è il 20-30\%. 
 		
 		\subsection{Regole d'oro}
-	
+			Di seguito un elenco di regole relative all'inglese per la scelta di un nome giusto:
+			\begin{itemize}
+				\item I nomi corti funzionano meglio di quelli lunghi.
+				\item Il nome deve essere unico evitando di confondersi con altri nomi.
+				\item Prendersi sempre il dominio \emph{.com}; nella media ha un impatto maggiore del 4,5\%.
+				\item Il nome deve essere facile da memorizzare e da scrivere. (questa regola si rivela come un test utile nella scelta tra le alternative individuate)
+				\item Scegliere parole che esistono piuttosto che inventarne di nuove. IN ogni caso mescolare parole conosciute con quelle inventate. L'impatto va da -5\% a 1,5\%.
+				\item Attenti al suono della parola, deve essere piacevole e armonioso.
+					\begin{itemize}
+						\item Se inizia con una vocale ha un impatto maggiore del 3,7\%.
+						\item Se inizia con una semivocale \emph{r, j, y, w} +2,9\%.
+						\item Se inizia con consonante \emph{f, v, s, z} +3,3\%.
+						\item Se inizia con consonante \emph{p, k, t} +1,9\%.
+					\end{itemize}
+					I suoni associati alle parole brutte danno svantaggio. In alcuni contesti invece creano effetto positivo (pornografia).
+				\item Niente trattini "-", -3\%.
+				\item Molto bene i numeri, +8,2\%.
+			\end{itemize}
+			Una nota a parte per il \textbf{processo di scelta}. Capita spesso che dopo aver controllato la lista dei nomi trovati liberi il giorno dopo vengano presi da altri. I siti distributori di domini infatti pubblicizzano quei nomi che vanno per la maggiore. Per sicurezza si consiglia l'uso di \href{https://www.internic.net/index.html}{www.internic.net}.
 	
 	\section{Indirizzi e nomi dal lato tecnico}
+		Analizziamo l'altra faccia dei nomi: il lato tecnico.
 	
 		\subsection{URI, URL e URN}
+			Gli URI (\emph{Uniform Resource Identifier}) sono i nomi con cui si idetificano le risorse web. L'insieme degli URI comprende anche gli URL e gli URN:
+			
+			\paragraph*{Ad esempio:}
+				\begin{itemize}[label={}]
+					\item \emph{www.sito.com} non è un URI poiché non è completo.
+					\item \emph{http:}//\emph{www.sito.com} invece è un URI, precisamente un URL.
+					\item Attenzione! anche \emph{news:it.cultura} è un URI.
+				\end{itemize}
+				
+				Gli URI si suddividono in:
+				\begin{description}
+					\item[URL:] \emph{Uniform Resource Locator}, definiscono come raggiungere una risorsa;
+					\item[URN:] \emph{Uniform Resource Name}, identificano il nome di una risorsa e restano unici e persistenti anche quando questa sparisce.
+				\end{description}
+				
+				Gli URI possono essere di due tipi:
+				\begin{description}
+					\item[Assoluto:] indirizzo completo;
+					\item[Relativo:] l'URI diventa assoluto grazie all'informazione derivante dal contesto.
+				\end{description}
 		
 		\subsection{Struttura URI}
+			Un URI ha la seguente struttura:
+			\begin{quote}
+			\begin{verbatim}
+				schema: parte-dipendente-dallo-schema
+			\end{verbatim}
+			\end{quote}
+			Dove lo schema definisce la semantica (significato) dell'URI che dà significato alla seconda parte.
 		
 		\subsection{URI gerarchici}
+			La struttura di un URI gerarchico è la seguente:
+			\begin{quote}
+			\begin{verbatim}
+				schema://authority path ? query
+			\end{verbatim}
+			\end{quote}
+			Dove:
+			\begin{description}
+				\item["//":] sta per URI gerarchico;
+				\item["authority":] è la parte che indica chi risponde in caso della risorsa;
+				\item["path":] è il cammino che può comporsi di 0 o più segmenti della forma "/segmento";
+				\item["hash "\# ":] serve per indicare sottorisorse all'interno di una stessa risorsa.
+				\item["? query":] sono i parametri passati e interretati dalla risorsa.
+			\end{description}
 		
 		\subsection{URI opachi: URN}
+			Gli URI opachi hanno la seguente struttura:
+			\begin{quote}
+			\begin{verbatim}
+				schema : opache_part
+			\end{verbatim}
+			\end{quote}
+			
+			Dove \emph{"opache\_ part"} son delle specie di cammini ma senza l'uso dello slash "/". Un esempio è: \emph{mailto:director@cnn.com}.
+			
+			Gli indirizzi URI di tipo opaco sono URN:
+			\begin{quote}
+			\begin{verbatim}
+				urn : NID : \dots
+			\end{verbatim}
+			\end{quote}
+			Dove NID rappresenta l'identificatore del \emph{namespace}.
+			Un esempio è: urn:isbn:0-395-36341-1
 		
 		\subsection{Oltre gli URI}
+			Gli URI sono con codifica ASCII, per supportare i caratteri non solo latini è nato IRI (International Resource Identifiers).
 		
 		\subsection{Attacchi omografici}
+			Con l'uso degli IRI si sono però peggiorati gli attacchi omografici, ovvero l'uso di una grafia equivalente per imitare il nome di altri siti (ad esempio G00gle al posto di Google). Si è ricorsi quindi alla validazione con la firma mostrata dai browser.
 		
 		\subsection{Problema opacità URI}
+			Un problema degli URI è che non danno in nessun modo informazioni sulla risorsa. Per esempio:
+			\begin{quote}
+				\emph{http:}//\emph{www.sito.it/a/pag.html}
+			\end{quote}
+			Non dice assolutamente che questo sito è in italiano o questa pagina è html. È una stringa opaca, l'unico modo per sapere informazioni sulla risorsa è interrogare l'http.
 		
 			\subsubsection{L'idiozia umana}
+				L'idiozia umana però non ha tardato ad arrivare e infatti dalla compagia ICM registry (venditrice di domini) arriva la proposta di usare il TLD (\emph{Top Level Domain} ovvero far sì che il ".qualcosa" avesse un significato per la risorsa che lo contenesse nel proprio nome. Ad esempio:
+				\begin{itemize}
+					\item .xxx per siti pornografici;
+					\item .kids per i bambini;
+					\item .adult per contenuti per adulti \dots
+				\end{itemize}
+				
+				La proposta poteva essere di tipo "leggero" ovvero lasciare  che l'uso fosse a scelta o "forte", imporlo per legge.
+				In termini monetari il costo sarebbe stato nullo ma in termini sociali?
+				\begin{itemize}[label={}]
+					\item per la proposta "leggera" nessuno avrebbe adottato il modello TLD perché sarebbe stato vittima di filtri e quindi avrebbe utilizzato il ".com" per convenienza.
+					\item Per la proposta "forte" invece i problemi sarebbero stati ancora maggiori. Cosa definisco pornografico? La foto di Lenna riportata in figura ~\ref{fig:IlNomeGiusto-IdioziaUmana} è stata usata per anni come immagine sperimentale a scopo illustrativo e grafico finché non fu scoperto derivasse dal giornale di playboy. Da quel giorno fu censurata in ogni dove. Il concetto di pornografico cambia in base all'informazione che c'è dietro.
+				\end{itemize}
+				
+				\begin{figure} [h]
+					\centering
+					\includegraphics[scale=0.25]{images/IlNomeGiusto-IdioziaUmana}
+					\caption{Il nome giusto - Lenna e l'idiozia umana}
+					\label{fig:IlNomeGiusto-IdioziaUmana}
+				\end{figure}
 			
 			\paragraph{L'esempio di Douglas Crackfor e JSMin}
+				Un altro esempio di "ambiguità sociale" proviene dalla libreria JSMin per minimizzare javascript. Nella licenza del software troviamo: \emph{``shall be use for good, not evil''}. Una semplice battuta che però ha generato interessi legali\dots
 			
 			\subparagraph*{Morale:}
 			\begin{quote}
-				``Usare gli URL per scopi che non sono i suoi è stupidità tecnica e politica''
+				``Usare gli URL per scopi che non sono i suoi è stupidità tecnica e politica.''
 			\end{quote}
-			infatti nel 18 marzo 2011 il ".xxx" è approvato\dots E la società ICM registry ha fatturato 200 milioni in più\dots
+			\dots infatti nel 18 marzo 2011 il ".xxx" è approvato\dots E la società ICM registry ha fatturato 200 milioni in più\dots
