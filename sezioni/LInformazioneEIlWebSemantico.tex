@@ -1,0 +1,188 @@
+
+\chapter{L'informazione e il web semantico (*)}
+
+	\section{La torre di Babele del web}
+	
+		\subsection{Un esempio di problema informativo}
+			Il problema SIAE, il cantante Usher contro il professor Usher.
+		
+		\subsection{Evoluzione}
+			Ma se al posto dell'Html avremmo informazione strutturata? Così facendo potremmo rimuovere le  ambiguità e le macchine potrebbero "capire" le informazioni del web. Uno strumento per fare questo può essere l'XML, semplice e flessibile è stato creato proprio per questa necessità di strutturazione dei dati. Purtroppo proprio da questi stessi vantaggi nacquero molti dialetti che resero impossibile l'aggregazione. L'XML uscito fallimentare dall'\emph{open world} è quindi stato sostituito da un nuovo strumento l'RDF. Vediamo i vantaggi rispetto l'XML:
+			\begin{itemize}
+				\item le informazioni mappano su un modello non ambiguo. In ogni modello RDF si può riconoscere quali bit rappresentano la semantica e quali la sintassi di contorno.
+				\item l'RDF è parte del web semantico.
+			\end{itemize}
+			L'RDF è quello strumento che mancava per rendere possibile l'aggregazione dell'informazione e il ragionamento automatico su di essa.
+		
+	\section{Il web semantico}
+	
+		\subsection{Babel Fish: l'RDF}
+			Babel Fish è un traduttore istantaneo biologico descritto all'interno del libro Guida Galattica per gli Autostoppisti di Douglas Adams. Il modello RDF (\emph{Resource Description Framework} può certamente interpretare questo ruolo di traduttore dal web che conosciamo a quello semantico come vediamo nella figura ~\ref{fig:LInformazioneEIlWebSemantico-WebSemantico}.
+			
+			\begin{figure}
+				\centering
+				\includegraphics[scale=0.5]{images/LInformazioneEIlWebSemantico-WebSemantico1}
+				\caption{Il web semantico - \emph{Layer} che compongono l'informazione}
+				\label{fig:LInformazioneEIlWebSemantico-WebSemantico}
+			\end{figure}			
+			
+			\subsubsection{Il modello RDF}
+				Il modello RDF è un \emph{framework} comune che descrive metadati, relazioni e concetti garantendo l'interoperabilità tra essi. Si basa sulla grammatica di base:
+				\begin{quote}
+					$\langle$ soggetto - predicato - complemento oggetto $\rangle$
+				\end{quote}
+			
+			\subsubsection{Funzionalità e proprietà di RDF}
+			
+				\begin{description}
+					\item[Aggregazione:]
+					\item[Contenitori:]
+					\item[Variabili:]
+					\item[Monoticità:]
+					\item[Reificazione:]
+				\end{description}
+				
+			\subsubsection{I tipi semantici}
+				Abbiamo visto con il caso \emph{"Usher vs Peter Usher"} che nel web mancano i tipi semantici.
+				
+			\subsubsection{Caratteristiche di RDF Schema}
+
+			\subsubsection{Oltre l'RDF Schema}
+			
+		\subsection{L'architettura del web (Tim Berners-Lee)}
+			Tim Berners-Lee prevedeva già questo alla nascita del web e infatti il web è nato seguendo questi assiomi:
+			\begin{itemize}
+				\item [0a)] A qualsiasi risorsa dovunque sia, essa può avere un nome. (\emph{assioma di universalità})
+				\item [0b)] Ogni cosa di significato dovrebbe avere un URI. (\emph{assioma di universalità 2})
+				\item [1)] Non importa a chi o dove specifichi un URI, ma che abbia sempre lo stesso significato. (\emph{global scope})
+			\end{itemize}
+			
+			\subsubsection{Dare un nome: il problema con gli URI}
+				Trovare un nome web non è banale:
+				\begin{description}
+					\item[URI \emph{variant problem}:] esistono molte varianti per o stesso concetto.
+					\item[URI \emph{variant law}:] l'utilità decresce esponenzialmente con il numero di varianti (legge della varianza degli URI). Più un nome ha diversi significati più questo perde valore.
+					\item[URI \emph{variant size}:]
+				\end{description}
+			
+			\subsubsection{La soluzione}
+			
+		
+		\subsection{Strato ontologico: OWL}
+		
+			\subsubsection{Caratteristiche di OWL}
+			
+				L'(in)uguaglianza di OWL:	
+					\begin{description}
+						\item[EquivaleClass:]
+						\item[equivalentProerty]
+						\item[sakIndividualeAS]
+						\item[differentFrom:]
+						\item[allDifferent]
+						\item[SameIndividualAs]
+					\end{description}
+					
+				altre caratteristiche:
+				
+					\begin{itemize}
+						\item inverseOf
+						\item transitiveProperty
+						\item simmetricProperty
+						\item inverseFunctionalProperty
+					\end{itemize}
+					
+			\subsubsection{Proprietà di OWL}
+				
+			\subsubsection{Il problema: ragionarci}
+			
+			
+		\subsection{SPARQL}
+		
+			\subsubsection{Modellazione con SPARQL}		
+		
+			\begin{description}
+				\item[DC: Dublic Core]
+				\item[FOAF: Friend Of A Friend]
+			\end{description}		
+		
+		\subsection{Un problema di complessità}
+			
+			\subsubsection{La soluzione di SPARQL}
+			
+			\subsubsection{La soluzione di OWL}
+				Lo strato che offre di più con OWL ha optato per mantenere
+				\begin{itemize}[label={}]
+					\item sia l'\textbf{espressività}, avere una logica decidibile ma limitata,
+					\item e sia la \textbf{computabilità}, avere una logica espressiva ma complessa da gestire.
+				\end{itemize}
+				Per garantirle entrambe, si sono creati dei sottoinsiemi di OWL:
+				\begin{description}
+					\item[OWL \emph{lite}:] decidibile con uso della logica SHIFT.
+					\item[OWL \emph{DL}:] decidibile con logiche descrittive SHOIN.
+					\item[OWL \emph{full}:] indecidibile ma sfrutta le logiche più avanzate.
+				\end{description}
+				
+				\paragraph{Complessità e statistica}		
+				
+		
+	\section{Il web semantico diventa Linked Data}
+		
+		\subsection{Classificazione LOD}
+			I LOD sono i tipi di \emph{Linked Data open}, ossia disponibili a tutti gratuitamente. Sono classificati in una scala da 1 a 5 stelle.
+			\begin{description}
+				\item[$\bigstar$] dati sul web liberi (\emph{open}).
+				\item[$\bigstar \bigstar$] dati sul web liberi con formato strutturato ovvero \emph{machine readable}.
+				\item[$\bigstar \bigstar \bigstar$] dati sul web liberi con formato dati non proprietario (non necessariamente con RDF).
+				\item[$\bigstar \bigstar \bigstar \bigstar$] dati sul web liberi con formato \emph{semantic web}.
+				\item[$\bigstar \bigstar \bigstar \bigstar \bigstar$] dati sul web liberi con formato \emph{semantic web} collegati ad altri per darli un contesto.
+			\end{description}
+			
+		\subsection{Lifting \& lowering}
+			\emph{Lifting \& lowering} corrispondono, rispettivamente, al passaggio dal mondo a 3 stelle al mondo semantico di 4 e 5 stelle e viceversa.
+			Esempi di strumenti di \emph{lifting} sono:
+			\begin{itemize}
+				\item DR2Q: trasforma il linguaggio SQL in RDF.
+				\item Triplify: \emph{plug-in} leggero che crea una struttura semantica da database relazionali.
+				\item Openlink 'virtuoso': server universale che permette la relazione tra SQL, XML e RDF.
+			\end{itemize}
+			Per \emph{lifting} dal formato più basso:
+			\begin{itemize}
+				\item Open Calais: da un significato al testo e all'informazione pura.
+				\item Spotlight.
+				\item Alchemy.
+			\end{itemize}
+			Un esempio di quanto potenziale offrono questi strumenti ce lo fornisce il sito \href{http://www.wikido.com/}{www.wikido.com}. Questo sito preleva da un insieme di siti selezionati informazione che con Open Calais viene trasformata in informazione di alto livello ottenendo dati strutturati.
+			Lo stesso fa Google con particolari \emph{query} (vedi figura ~\ref{fig:LInformazioneEIlWebSemantico-IlCasoUsher}).
+			
+			\begin{figure} [h]
+				\centering
+				\includegraphics[width=\textwidth]{images/LInformazioneEIlWebSemantico-IlCasoUsher}
+				\caption{Il web semantico - Informazione strutturata (sulla destra) raccolta tramite \emph{lifting}}
+				\label{fig:LInformazioneEIlWebSemantico-IlCasoUsher}
+			\end{figure}
+			
+		
+		\subsection{Connettere le informazioni}
+			Abbiamo visto le immense potenzialità che derivano dal \emph{lifting} dei dati, ma come è possibile fare questo? Di seguito spieghiamo un tipo di algoritmo adottato da Google che permette questa magia.
+		
+			\subsubsection{Scegliere i punti}
+				Scegliere i punti si rivela il vero problema. Infatti i punti tra cui scegliere sono la radice quadrata della dimensione dei dati. La complessità quindi risulta:
+				\[
+					O(|E| \cdot |G_1|) + O(|G_1| \cdot |G_2|) = O((|E| + |G_2|) \cdot |G1|)
+				\]
+				Siamo partiti da con una complessità pari a $O(|G_1|\cdot|G_2|)$ con la tecnica \emph{brute force} e siamo arrivati a $O((|E| + |G_2|) \cdot |G1|)$. Abbiamo ottenuto un algoritmo peggiore ma non nella pratica, perché questo algoritmo messo in pratica funziona splendidamente e consente di avere un risparmio di costo computazionale del 95\% rispetto al \emph{brute force}.
+			
+			\subsubsection{Esporre i dati}
+				Per esporre i dati nel web abbiamo diversi modi. Uno può essere quello di mostrare i dati come file sotto un URI, ma questo è poco pratico. Nella pratica si preferisce ricorrere a interfacce con cui fare \emph{query} usando SPARQL, offrendo in questo modo un servizio web molto potente e flessibile. Questi \emph{query} fatte attraverso indirizzo web con classici \emph{"urlencoding"} e passaggio parametri con GET HTTP sono chiamate \textbf{\emph{endpoint}}. Un esempio di SPARQL \emph{endpoint}:
+				\begin{quote}
+				\begin{verbatim}
+					PREFIX dc <http://purl.org/dc/elements/1.1/>
+					SELECT ?book ?who
+					WHERE ( ?book dc:creator ?who )
+				\end{verbatim}
+				\end{quote}
+				Un esempio concreto di un tale servizio è \href{http://wiki.dbpedia.org/}{dbpedia.com} da cui è possibile effettuare \emph{query} SPARQL e ottenere pagine come questa: tutta la conoscenza di \href{http://dbpedia.org/page/Albert_Einstein}{Albert Einstain} in una pagina.
+				Le ontologie principale sono date da \href{https://schema.org/}{schema.org}. Un altro sito interessante è \href{http://www.visualdataweb.org/relfinder.php}{www.visualdatamedia.org}, il quale mette a disposizione un servizio che permette di navigare il grafo delle conoscenza sulle parole date. 
+					
+					
+					
