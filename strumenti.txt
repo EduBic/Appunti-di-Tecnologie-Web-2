@@ -46,6 +46,7 @@ https://www.w3.org/2001/09/06-ecdl/
 
 RDF
 https://it.wikipedia.org/wiki/Resource_Description_Framework
+http://www.okpedia.it/resource_description_framework
 
 
 

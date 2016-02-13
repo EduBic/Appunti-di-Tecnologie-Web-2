@@ -31,15 +31,44 @@
 				\begin{quote}
 					$\langle$ soggetto - predicato - complemento oggetto $\rangle$
 				\end{quote}
+				Questi tre elementi possono contenere due diversi tipi di dati:
+					\begin{itemize}
+						\item URI,
+						\item Stringhe letterali;
+					\end{itemize}
+				che compongono la struttura linguistica e logica più semplice. Questa struttura può essere visualizzata come un grafo ~\ref{fig:LInformazioneEIlWebSemantico-RDF1}.
+				
+				\begin{figure}
+				\centering
+					\includegraphics[scale=0.8]{images/LInformazioneEIlWebSemantico-RDF1}
+					\caption{Il web semantico - Grammatica di base}
+					\label{fig:LInformazioneEIlWebSemantico-RDF1}
+				\end{figure}
+				
+				RDF può essere rappresentato in due modi differenti:
+				\begin{description}
+					\item[dialetto XML] usando la struttura XML per alzare la complessità e arricchire il significato.
+					\item[N-triple] usando le triplette soggetto-predicato-verbo.
+				\end{description}
+				Esempio di tripletta della frase \emph{"il cielo è blu"}:
+				\begin{quote}
+				\begin{verbatim}
+					<rdf:Description rdf:about='cielo'>
+					<v:essere>blu</v:essere>
+					</rdf:Description>
+				\end{verbatim}
+				\end{quote}
+				
+				RDF è un linguaggio separato dal web comune, per integrarlo si è ricorso ad una versione XHTML2: RDFa che aggiunge gli attributi \emph{about} e \emph{property}.
 			
 			\subsubsection{Funzionalità e proprietà di RDF}
 			
 				\begin{description}
-					\item[Aggregazione:]
-					\item[Contenitori:]
-					\item[Variabili:]
-					\item[Monoticità:]
-					\item[Reificazione:]
+					\item[Aggregazione:] l'unione di due grafi di conoscenza è un grafo creato tramite collegamenti dei nomi del web (URI). Questa è la proprietà più importante e che decreta il successo di RDF rispetto XML.
+					\item[Contenitori:] concetti logici di AND e OR.
+					\item[Variabili:] oggetti logici non specificabili.
+					\item[Monotonicità:] l'informazione espressa in RDF supponiamo sia vera.
+					\item[Reificazione:] garantisce la monotonicità, riduce ad un oggetto (\emph{"cosifica"} cit.) una asserzione. Per esempio nella frase \emph{"Gromit dice che 'la luna è di formaggio'"}, la frase nel sottolivello \emph{"la luna è di formaggio"} è in realtà un'altra frase che grazie al processo di reificazione diventa un oggetto. Grazie a ciò abbiamo anche una diversificazione di livelli.
 				\end{description}
 				
 			\subsubsection{I tipi semantici}
@@ -62,13 +91,16 @@
 				\begin{description}
 					\item[URI \emph{variant problem}:] esistono molte varianti per o stesso concetto.
 					\item[URI \emph{variant law}:] l'utilità decresce esponenzialmente con il numero di varianti (legge della varianza degli URI). Più un nome ha diversi significati più questo perde valore.
-					\item[URI \emph{variant size}:]
+					\item[URI \emph{variant size}:] un URI può acquisire diversi significati in base al dominio di interesse. Problema "big red barn" (se un bambino indica una mucca illustrata in un libro, ciò che indica è "una mucca" o "un libro"? Esistono livelli diversi).
 				\end{description}
+				
 			
 			\subsubsection{La soluzione}
 			
 		
 		\subsection{Strato ontologico: OWL}
+			Per risolvere il problema degli URI sovraccaricati con diversi significati
+			Il supporto di base fornito da RDF Schema è stato esteso con lo stato ontologico Questo strato è descritto attraverso il linguaggio OWL (\emph{Web Ontology Language}) che si occupa di collegare e relazionare i vocaboli dando ad ognuno il proprio dominio d'interesse (la propria ontologia appunto).
 		
 			\subsubsection{Caratteristiche di OWL}
 			
@@ -99,11 +131,12 @@
 		\subsection{SPARQL}
 		
 			\subsubsection{Modellazione con SPARQL}		
-		
-			\begin{description}
-				\item[DC: Dublic Core]
-				\item[FOAF: Friend Of A Friend]
-			\end{description}		
+				
+				Vocabolari più famosi:
+				\begin{description}
+					\item[DC: Dublic Core]
+					\item[FOAF: Friend Of A Friend]
+				\end{description}		
 		
 		\subsection{Un problema di complessità}
 			
