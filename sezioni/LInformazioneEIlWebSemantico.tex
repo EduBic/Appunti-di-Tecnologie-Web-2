@@ -71,10 +71,30 @@
 					\item[Reificazione:] garantisce la monotonicità, riduce ad un oggetto (\emph{"cosifica"} cit.) una asserzione. Per esempio nella frase \emph{"Gromit dice che 'la luna è di formaggio'"}, la frase nel sottolivello \emph{"la luna è di formaggio"} è in realtà un'altra frase che grazie al processo di reificazione diventa un oggetto. Grazie a ciò abbiamo anche una diversificazione di livelli.
 				\end{description}
 				
+				Gli oggetti devono essere anche classificati garantendo un costo computazionale minimo. Abbiamo bisogno di un sistema di classificazione dell'informazione: un'ontologia che contenga tipi semantici. Mentre i tipi danno il formato sintattico dell'oggetto i tipi semantici gli danno il significato astraendo la rappresentazione sintattica.
+				
 			\subsubsection{I tipi semantici}
-				Abbiamo visto con il caso \emph{"Usher vs Peter Usher"} che nel web mancano i tipi semantici.
+				Abbiamo visto con il caso \emph{"Usher vs Peter Usher"} che nel web mancano i tipi semantici. I tipi semantici possono essere visti come classi. Un insieme di classi forma un'ontologia. Un'ontologia è costituita da:
+				\begin{description}
+					\item[Etichette:] rappresentanti caratteristiche informative (possono essere più di una per oggetto).
+					\item[Struttura:] rappresentante la gerarchia delle classi di tutte le classi. Più una struttura è ricca e più l'ontologia mi permette di espandere le cose e la comprensione di esse. È grazie alla struttura che è possibile fare controlli di integrità e ragionamenti. 
+				\end{description}
 				
 			\subsubsection{Caratteristiche di RDF Schema}
+				È composto da una struttura informativa fatta di:
+				\begin{itemize}
+					\item \emph{Class};
+					\item \emph{subClassOf};
+					\item \emph{individual}.
+				\end{itemize}
+				Questo per gli oggetti mentre per i verbi abbiamo a disposizione:
+				\begin{itemize}
+					\item \emph{Property};
+					\item \emph{subPropertyOf};
+					\item \emph{Domani};
+					\item \emph{range}. (dove la proprietà è applicata)
+				\end{itemize}
+				Grazie all'RDF Schema, quindi, possiamo \textbf{categorizzare l'informazione}.
 
 			\subsubsection{Oltre l'RDF Schema}
 			
@@ -96,11 +116,10 @@
 				
 			
 			\subsubsection{La soluzione}
-			
+				La soluzione a questo inghippo è aggiungere più informazione. Abbiamo bisogno di maggiore informazione, un nuovo \emph{layer}: lo strato ontologico e un linguaggio ontologico.
 		
 		\subsection{Strato ontologico: OWL}
-			Per risolvere il problema degli URI sovraccaricati con diversi significati
-			Il supporto di base fornito da RDF Schema è stato esteso con lo stato ontologico Questo strato è descritto attraverso il linguaggio OWL (\emph{Web Ontology Language}) che si occupa di collegare e relazionare i vocaboli dando ad ognuno il proprio dominio d'interesse (la propria ontologia appunto).
+			Il supporto di base fornito da RDF Schema è stato quindi esteso con lo strato ontologico. Questo strato è descritto attraverso il linguaggio OWL (\emph{Web Ontology Language}) che si occupa di collegare e relazionare i vocaboli dando ad ognuno il proprio dominio d'interesse (la propria ontologia appunto).
 		
 			\subsubsection{Caratteristiche di OWL}
 			
@@ -138,7 +157,7 @@
 					\item[FOAF: Friend Of A Friend]
 				\end{description}		
 		
-		\subsection{Un problema di complessità}
+		\subsection{Un problema di complessità (*)}
 			
 			\subsubsection{La soluzione di SPARQL}
 			
@@ -155,7 +174,8 @@
 					\item[OWL \emph{full}:] indecidibile ma sfrutta le logiche più avanzate.
 				\end{description}
 				
-				\paragraph{Complessità e statistica}		
+				\paragraph{Complessità e statistica}	
+					La complessità della logica SHIFT è EXPTIME (\emph{query} a tempo esponenziale) mentre per SHOIN è NEXPTIME (tempo esponenziale non deterministico). Viene da pensare quale assurdità è usare strumenti con questa complessità folle ma la complessità è una statistica. È molto più rilevante la statistica su dati non casuali e sopratutto non su qualsiasi combinazione esistente. Per gli \emph{input} d'interesse ci interessa maggiormente la media che da il tempo ???.
 				
 		
 	\section{Il web semantico diventa Linked Data}
