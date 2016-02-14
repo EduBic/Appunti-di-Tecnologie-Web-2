@@ -4,10 +4,12 @@
 	\section{La torre di Babele del web}
 	
 		\subsection{Un esempio di problema informativo}
-			Il problema SIAE, il cantante Usher contro il professor Usher.
+			Con l'espansione del web si sperimentano i primi bot cattura informazione. Uno di questi sistemi creato dal MIT permetteva un acquisto in pochi passi. Una \emph{query} famosa fu "manda una rosa alla mia ragazza", il bot trovò il prodotto desiderato e anche ne trovò un altro che corrispondeva a tutt'altro.
+			Lo stesso capitò alla RIA (l'equivalente della SIAE) con un proprio bot che scovò una canzone piratata del cantante Usher ma che in realtà si rivelò una canzone completamente diversa, creata a scopo educativo dal professor Peter Usher.
+			Molti investimenti sono stati fatti e ad oggi i bot sfruttano i tipi semantici, comprendendo. Vediamo come:
 		
 		\subsection{Evoluzione}
-			Ma se al posto dell'Html avremmo informazione strutturata? Così facendo potremmo rimuovere le  ambiguità e le macchine potrebbero "capire" le informazioni del web. Uno strumento per fare questo può essere l'XML, semplice e flessibile è stato creato proprio per questa necessità di strutturazione dei dati. Purtroppo proprio da questi stessi vantaggi nacquero molti dialetti che resero impossibile l'aggregazione. L'XML uscito fallimentare dall'\emph{open world} è quindi stato sostituito da un nuovo strumento l'RDF. Vediamo i vantaggi rispetto l'XML:
+			Ma se al posto dell'Html avremmo informazione strutturata? Così facendo potremmo rimuovere le  ambiguità e le macchine potrebbero "capire" le informazioni del web. Uno strumento per fare questo può essere l'XML, semplice e flessibile, creato proprio per la necessità di strutturazione dei dati. Purtroppo proprio da questi stessi vantaggi nacquero molti dialetti che resero impossibile l'aggregazione. L'XML uscito fallimentare dall'\emph{open world} portò quindi alla necessità di creare un nuovo livello superiore che permettesse l'aggregazione e un nuovo strumento che lo descrivesse: l'RDF. Vediamo i vantaggi rispetto l'XML:
 			\begin{itemize}
 				\item le informazioni mappano su un modello non ambiguo. In ogni modello RDF si può riconoscere quali bit rappresentano la semantica e quali la sintassi di contorno.
 				\item l'RDF è parte del web semantico.
@@ -17,7 +19,7 @@
 	\section{Il web semantico}
 	
 		\subsection{Babel Fish: l'RDF}
-			Babel Fish è un traduttore istantaneo biologico descritto all'interno del libro Guida Galattica per gli Autostoppisti di Douglas Adams. Il modello RDF (\emph{Resource Description Framework} può certamente interpretare questo ruolo di traduttore dal web che conosciamo a quello semantico come vediamo nella figura ~\ref{fig:LInformazioneEIlWebSemantico-WebSemantico}.
+			Babel Fish è un traduttore istantaneo biologico descritto all'interno del libro \emph{Guida Galattica per gli Autostoppisti} di Douglas Adams. Il modello RDF (\emph{Resource Description Framework} può certamente interpretare questo ruolo di traduttore dal web che conosciamo a quello semantico come vediamo nella figura ~\ref{fig:LInformazioneEIlWebSemantico-WebSemantico}.
 			
 			\begin{figure}
 				\centering
@@ -45,12 +47,12 @@
 					\label{fig:LInformazioneEIlWebSemantico-RDF1}
 				\end{figure}
 				
-				RDF può essere rappresentato in due modi differenti:
+				L'RDF può essere rappresentato in due modi differenti:
 				\begin{description}
 					\item[dialetto XML] usando la struttura XML per alzare la complessità e arricchire il significato.
 					\item[N-triple] usando le triplette soggetto-predicato-verbo.
 				\end{description}
-				Esempio di tripletta della frase \emph{"il cielo è blu"}:
+				Esempio di tripletta della frase \emph{"il cielo è blu"} contenente due stringhe:
 				\begin{quote}
 				\begin{verbatim}
 					<rdf:Description rdf:about='cielo'>
@@ -59,29 +61,30 @@
 				\end{verbatim}
 				\end{quote}
 				
-				RDF è un linguaggio separato dal web comune, per integrarlo si è ricorso ad una versione XHTML2: RDFa che aggiunge gli attributi \emph{about} e \emph{property}.
+				L'RDF è un linguaggio separato dal web comune, per integrarlo si è ricorso ad una versione XHTML2: l'RDFa che aggiunge gli attributi \emph{about} (il soggetto) e \emph{property} (il verbo), il contenuto è il complemento oggetto.
+				
 			
 			\subsubsection{Funzionalità e proprietà di RDF}
 			
 				\begin{description}
-					\item[Aggregazione:] l'unione di due grafi di conoscenza è un grafo creato tramite collegamenti dei nomi del web (URI). Questa è la proprietà più importante e che decreta il successo di RDF rispetto XML.
+					\item[Aggregazione:] l'unione di due grafi di conoscenza è un grafo creato tramite collegamenti automatici dei nomi del web (URI). Questa è la proprietà più importante e che decreta il successo di RDF rispetto ai dialetti XML. 
 					\item[Contenitori:] concetti logici di AND e OR.
-					\item[Variabili:] oggetti logici non specificabili.
-					\item[Monotonicità:] l'informazione espressa in RDF supponiamo sia vera.
-					\item[Reificazione:] garantisce la monotonicità, riduce ad un oggetto (\emph{"cosifica"} cit.) una asserzione. Per esempio nella frase \emph{"Gromit dice che 'la luna è di formaggio'"}, la frase nel sottolivello \emph{"la luna è di formaggio"} è in realtà un'altra frase che grazie al processo di reificazione diventa un oggetto. Grazie a ciò abbiamo anche una diversificazione di livelli.
+					\item[Variabili:] oggetti logici non specificati.
+					\item[Monotonicità:] preso un grafo, se l'informazione espressa in esso supponiamo sia vera allora tutti i sottografi sono veri.
+					\item[Reificazione:] garantisce la monotonicità, riduce ad un oggetto (\emph{"cosifica"} cit.) una asserzione. Per esempio nella frase \emph{"Gromit dice che 'la luna è di formaggio'"}, la frase nel sottolivello \emph{"la luna è di formaggio"} è in realtà un'altra frase che grazie al processo di reificazione diventa un oggetto, per cui, anche se non sappiamo sia vero ciò non influisce nella veridicità della prima frase. Grazie a ciò abbiamo anche una diversificazione di livelli.
 				\end{description}
 				
-				Gli oggetti devono essere anche classificati garantendo un costo computazionale minimo. Abbiamo bisogno di un sistema di classificazione dell'informazione: un'ontologia che contenga tipi semantici. Mentre i tipi danno il formato sintattico dell'oggetto i tipi semantici gli danno il significato astraendo la rappresentazione sintattica.
+				Gli oggetti devono essere anche classificati garantendo un costo computazionale minimo. Abbiamo bisogno di un \textbf{sistema di classificazione dell'informazione}: un'ontologia che contenga tipi semantici. Mentre i \textbf{tipi} danno il formato sintattico dell'oggetto, i \textbf{tipi semantici} gli danno il significato astraendo la rappresentazione sintattica.
 				
 			\subsubsection{I tipi semantici}
-				Abbiamo visto con il caso \emph{"Usher vs Peter Usher"} che nel web mancano i tipi semantici. I tipi semantici possono essere visti come classi. Un insieme di classi forma un'ontologia. Un'ontologia è costituita da:
+				Abbiamo visto con il caso \emph{"Usher vs Peter Usher"} che nel web mancano i tipi semantici. I tipi semantici possono essere astratti come classi. Un insieme di classi forma un'ontologia. Un'ontologia è costituita da:
 				\begin{description}
 					\item[Etichette:] rappresentanti caratteristiche informative (possono essere più di una per oggetto).
-					\item[Struttura:] rappresentante la gerarchia delle classi di tutte le classi. Più una struttura è ricca e più l'ontologia mi permette di espandere le cose e la comprensione di esse. È grazie alla struttura che è possibile fare controlli di integrità e ragionamenti. 
+					\item[Struttura:] rappresentante la gerarchia di tutte le classi. Più una struttura è ricca e più l'ontologia mi permette di espandere le cose e la comprensione di esse. È grazie alla struttura che è possibile fare \textbf{controlli di integrità semantica} e \textbf{ragionamenti}.
 				\end{description}
 				
 			\subsubsection{Caratteristiche di RDF Schema}
-				È composto da una struttura informativa fatta di:
+				L'RDF offre uno schema con una struttura informativa fatta di:
 				\begin{itemize}
 					\item \emph{Class};
 					\item \emph{subClassOf};
@@ -89,14 +92,15 @@
 				\end{itemize}
 				Questo per gli oggetti mentre per i verbi abbiamo a disposizione:
 				\begin{itemize}
-					\item \emph{Property};
+					\item \emph{Property}; (la relazione, il verbo)
 					\item \emph{subPropertyOf};
-					\item \emph{Domani};
+					\item \emph{Domain};
 					\item \emph{range}. (dove la proprietà è applicata)
 				\end{itemize}
 				Grazie all'RDF Schema, quindi, possiamo \textbf{categorizzare l'informazione}.
 
 			\subsubsection{Oltre l'RDF Schema}
+				Abbiamo fissato delle regole semantiche ma siamo ancora al livello base delle ontologie (stato tassonomie). SI può fare molto di più: l'RDF permette l'aggregazione automatica attraverso l'URI. Ma gli URI presentano problemi di ambiguità.
 			
 		\subsection{L'architettura del web (Tim Berners-Lee)}
 			Tim Berners-Lee prevedeva già questo alla nascita del web e infatti il web è nato seguendo questi assiomi:
@@ -106,13 +110,15 @@
 				\item [1)] Non importa a chi o dove specifichi un URI, ma che abbia sempre lo stesso significato. (\emph{global scope})
 			\end{itemize}
 			
-			\subsubsection{Dare un nome: il problema con gli URI}
-				Trovare un nome web non è banale:
+			\subsubsection{Dare un nome ad ogni cosa: il problema degli URI}
+				Trovare un nome (web) non è banale:
 				\begin{description}
 					\item[URI \emph{variant problem}:] esistono molte varianti per o stesso concetto.
 					\item[URI \emph{variant law}:] l'utilità decresce esponenzialmente con il numero di varianti (legge della varianza degli URI). Più un nome ha diversi significati più questo perde valore.
-					\item[URI \emph{variant size}:] un URI può acquisire diversi significati in base al dominio di interesse. Problema "big red barn" (se un bambino indica una mucca illustrata in un libro, ciò che indica è "una mucca" o "un libro"? Esistono livelli diversi).
+					\item[URI \emph{variant size}:] un URI può acquisire diversi significati in base al dominio di interesse. "Problema \emph{big red barn}" cit. (se un bambino indica una mucca illustrata in un libro, ciò che indica è "una mucca" o "un libro"? Esistono livelli diversi).
 				\end{description}
+				
+				Quanti studiosi di web semantico ci vogliono per avvitare una lampadina? 1 per avvitarla e gli altri 9 per mettersi d'accordo su che cos'è una lampadina.
 				
 			
 			\subsubsection{La soluzione}
@@ -158,6 +164,11 @@
 				\end{description}		
 		
 		\subsection{Un problema di complessità (*)}
+		
+			La gerarchia dei problemi è:
+			\[
+				NL \subset P \subset NP \subset PSPACE \subset EXPTIME \subset EXPSPACE
+			\]
 			
 			\subsubsection{La soluzione di SPARQL}
 			
