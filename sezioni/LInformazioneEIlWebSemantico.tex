@@ -116,20 +116,16 @@
 					\item[URI \emph{variant problem}:] esistono molte varianti per o stesso concetto.
 					\item[URI \emph{variant law}:] l'utilità decresce esponenzialmente con il numero di varianti (legge della varianza degli URI). Più un nome ha diversi significati più questo perde valore.
 					\item[URI \emph{variant size}:] un URI può acquisire diversi significati in base al dominio di interesse. "Problema \emph{big red barn}" cit. (se un bambino indica una mucca illustrata in un libro, ciò che indica è "una mucca" o "un libro"? Esistono livelli diversi).
-				\end{description}
-				
-				Quanti studiosi di web semantico ci vogliono per avvitare una lampadina? 1 per avvitarla e gli altri 9 per mettersi d'accordo su che cos'è una lampadina.
-				
+				\end{description}				
 			
 			\subsubsection{La soluzione}
-				La soluzione a questo inghippo è aggiungere più informazione. Abbiamo bisogno di maggiore informazione, un nuovo \emph{layer}: lo strato ontologico e un linguaggio ontologico.
+				La soluzione a questo inghippo è aggiungere più informazione. Abbiamo bisogno di maggiore informazione, un nuovo \emph{layer}: lo strato ontologico e un nuovo linguaggio.
 		
 		\subsection{Strato ontologico: OWL}
 			Il supporto di base fornito da RDF Schema è stato quindi esteso con lo strato ontologico. Questo strato è descritto attraverso il linguaggio OWL (\emph{Web Ontology Language}) che si occupa di collegare e relazionare i vocaboli dando ad ognuno il proprio dominio d'interesse (la propria ontologia appunto).
 		
-			\subsubsection{Caratteristiche di OWL}
-			
-				L'(in)uguaglianza di OWL:	
+			\subsubsection{Caratteristiche e proprietà di OWL}
+				In OWL si può parlare dell'(in)uguaglianza degli oggetti. Per fare questo definisce le proprietà:
 					\begin{description}
 						\item[EquivaleClass:]
 						\item[equivalentProerty]
@@ -139,41 +135,150 @@
 						\item[SameIndividualAs]
 					\end{description}
 					
-				altre caratteristiche:
+				Grazie a queste proprietà si riesce a risolvere il problema dei nome. Altre funzionalità disposte da OWL:
 				
 					\begin{itemize}
-						\item inverseOf
-						\item transitiveProperty
-						\item simmetricProperty
-						\item inverseFunctionalProperty
+						\item inverseOf: collegare due proprietà per complementarietà.
+						\item transitiveProperty: capire se una proprietà è transitiva.
+						\item simmetricProperty (l'amicizia su Facebook è simmetrica).
+						\item inverseFunctionalProperty: specificare se un certo verbo è funzionale o no (dato un oggetto c'è un solo complemento oggetto associato).
 					\end{itemize}
 					
-			\subsubsection{Proprietà di OWL}
+				Sono inoltre possibili utilizzare restrizioni sulle proprietà delle classi:
+				\begin{itemize}
+					\item allValueFrom ($\forall$);
+					\item someValueFrom ($\exists$);
+					\item minCardinality
+					\item maxCardinality
+					\item cardinality
+				\end{itemize}
 				
 			\subsubsection{Il problema: ragionarci}
-			
+				Abbiamo tutte queste informazioni su cui ragionarci. Ma come? Purtroppo quando si passa ad un ragionamento ad alto livello la logica diventa indecidibile. Per descrivere espressioni ad alto livello sulle macchine è necessaria una traduzione a basso livello poiché la logica di prim'ordine, che fa uso dei costrutti logici $\exists$ e $\forall$, non è decidibile (la macchina non sa creare un programma che termini sempre). È il motivo per cui non abbiamo ancora linguaggi di programmazione ad alto livello che seguono una scrittura più vicina al nostro linguaggio.
 			
 		\subsection{SPARQL}
+			Abbiamo bisogno di un linguaggio che permetta una comunicazione di alto livello (relazionale) e che si occupi lui di definire la parte di basso livello. Un linguaggio simile funzionante è SQL in cui definisce tabelle e relazioni. Il vincoli di SQL è che alcune cose sono limitate, questo per permettere di garantire la terminazione del programma. La stessa cosa è stata applicata al web semantico sostituendo le relazioni tra tabelle con relazioni in un grafo generico. Nasce così SPARQL (SPARQL \emph{Protocol And RDF Query Language}, il linguaggio per permettere le \emph{query} nel web semantico seguendo le scelte di design di SQL.
 		
 			\subsubsection{Modellazione con SPARQL}		
+				Il fattore principale di SPARQL è il \emph{pattern matching} tra triplette nella struttura a grafo. 
 				
-				Vocabolari più famosi:
-				\begin{description}
-					\item[DC: Dublic Core]
-					\item[FOAF: Friend Of A Friend]
-				\end{description}		
+				La struttura di una \emph{query} SPARQL è:
+				\begin{quote}
+				\begin{verbatim}
+					PREFIX ...
+					SELECT ...
+					FROM ...
+					WHERE ( ...
+								)
+					ORDER BY ...					
+				\end{verbatim}					
+				\end{quote}					
+				
+		\subsection{Vocabolari ontologici}
 		
-		\subsection{Un problema di complessità (*)}
+				\subsubsection{DC: Dublin Core}
+					Uno dei primi tentativi di strutturare il web in maniera semantica. Definisce le proprietà di base fondamentali e essenziali che modellano l'intera struttura dei dati semantici. Queste proprietà di base individuate sono 15 che elenchiamo per completezza:
+					\begin{enumerate}
+						\item \emph{Title}
+						\item \emph{Creator}
+						\item \emph{Subject}
+						\item \emph{Description}
+						\item \emph{Publisher}
+						\item \emph{Contributor}
+						\item \emph{Date}
+						\item \emph{Type}
+						\item \emph{Format}
+						\item \emph{Identifier}
+						\item \emph{Source}
+						\item \emph{Language}
+						\item \emph{Relation}
+						\item \emph{Coverage}
+						\item \emph{Rights}
+					\end{enumerate}
+				Un insieme compatto che mi permette di definire una pagina web in triplette che compongono un grafico della conoscenza su cui è possibile effettuare delle \emph{query}.
+				Per esempio, usando i \emph{tag meta} è possibile tramite la \emph{keyword} '\emph{DC}' mettere a disposizione queste triplette direttamente nel web in modo che bot intelligenti ricavino informazioni utili.
+				\begin{quote}
+				\begin{verbatim}
+					<meta name="DC.title" content="How to use DC" />
+					<meta name="DC.creator" ... />
+					...
+				\end{verbatim}
+				\end{quote}
+				
+				\subsubsection{FOAF: Friend Of A Friend}
+					Altro vocabolario per altro usato da Google. Nato per la socialità e non le pagine web. Definisce le proprietà base di una persona. Per la class Person per esempio abbiamo:
+					\begin{itemize}
+						\item \emph{Name} (pagina web)
+						\item \emph{Title} (pagina web)
+						\item \emph{Firstname}
+						\item[] \dots
+						\item \emph{myerBriggs} (uno dei 16 tipi di personalità)
+						\item[] \dots
+					\end{itemize}
+					
+					Ad esempio:
+					\begin{quote}
+					\begin{verbatim}
+						<foaf:Person>
+						<foaf:name>Massimo Marchiori</foaf:name>
+						<foaf:mbox rdf:resource=mailto:massimo@w3.org />
+						</foaf:Person>
+					\end{verbatim}
+					\end{quote}	
+					È inoltre possibile esprimere il concetto di 'amicizia' con la relazione \verb|foaf:Knows|. Qui è possibile osservare la difficoltà della scrittura ad annidamento di XML a differenza delle semplici triplette.
+					
+		\subsection{Un esempio}
+			 PlanetRDF è un esempio di base di dati costruita sul web semantico. Tramite le informazioni semantiche con i vocabolari descritti sopra in ogni pagina è stato creato un grafo della conoscenza su cui era possibile effettuare \emph{query}.
+		 
+		 \subsection{Ancora SPARQL}
+		 	Preso il grafo della conoscenza, una base di dati, con SPARQL è possibile eseguire la propria \emph{query}. Per esempio vogliamo prendere l'indirizzo del blog di 'Mario Rossi' dal database planetRDF.
+		 	\begin{quote}
+		 	\begin{verbatim}
+		 		PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+		 		SELECT ?url
+		 		FROM <http://planetRDF.com />
+		 		WHERE (
+		 				?someone foaf:name "Mario Rossi"
+		 				?someone foaf:webblog ?url		)
+		 	\end{verbatim}
+			\end{quote}
+			
+			\subsubsection{Extra SPARQL}
+				Una caratteristica di SPARQL interessante è la possibilità di ricerca con dati opzionali, ossia nulli o assenti. Nel web semantico è facile avere informazioni parziali per questo SPARQL è stato previsto l'operatore \verb|OPTIONAL|. Ad esempio:
+				\begin{quote}
+				\begin{verbatim}
+					PREFIX foaf:<http://xmlns.com/foaf/0.1/>
+					SELECT ?name ?picture
+					FROM <http://planetRDF.com />
+					WHERE (
+							?someone foaf:name ?name
+							OPTIONAL{
+									?picture foaf:picture
+									}
+					)
+				\end{verbatim}
+				\end{quote}
+				La \emph{query} cerca il nome e la foto di qualcuno, grazie all'uso di \verb|OPTIONAL|, nel caso in cui qualcuno non abbia caricato la propria foto questa \emph{query} non darà errore.
 		
-			La gerarchia dei problemi è:
+		\subsection{Un problema di complessità}
+			SPARQL è decidibile come SQL? È efficiente?  Qual è la sua complessità?
+			La \textbf{gerarchia dei problemi}, individuata dagli studi sulla complessità, è:
 			\[
 				NL \subset P \subset NP \subset PSPACE \subset EXPTIME \subset EXPSPACE
 			\]
 			
-			\subsubsection{La soluzione di SPARQL}
+			\begin{figure} [h]
+				\centering
+				\includegraphics[scale=1]{images/LInformazioneEIlWebSemantico-Complessita}
+				\caption{L'informazione e il web semantico - Gerarchia dei problemi}
+				\label{LInformazioneEIlWebSemantico-Complessita}
+			\end{figure}
 			
+			Nel design del linguaggio SPARQL si sono seguite le scelte di SQL, per cui è decidibile (ovvero termina) ma ha una complessità $PSPACE$ (spazio polinomiale a rischio).
+			
+
 			\subsubsection{La soluzione di OWL}
-				Lo strato che offre di più con OWL ha optato per mantenere
+				Con OWL invece si è optato per mantenere
 				\begin{itemize}[label={}]
 					\item sia l'\textbf{espressività}, avere una logica decidibile ma limitata,
 					\item e sia la \textbf{computabilità}, avere una logica espressiva ma complessa da gestire.
@@ -185,14 +290,17 @@
 					\item[OWL \emph{full}:] indecidibile ma sfrutta le logiche più avanzate.
 				\end{description}
 				
-				\paragraph{Complessità e statistica}	
-					La complessità della logica SHIFT è EXPTIME (\emph{query} a tempo esponenziale) mentre per SHOIN è NEXPTIME (tempo esponenziale non deterministico). Viene da pensare quale assurdità è usare strumenti con questa complessità folle ma la complessità è una statistica. È molto più rilevante la statistica su dati non casuali e sopratutto non su qualsiasi combinazione esistente. Per gli \emph{input} d'interesse ci interessa maggiormente la media che da il tempo ???.
-				
+			\subsubsection{Complessità e statistica}	
+				La complessità della logica SHIFT è $EXPTIME$ (\emph{query} a tempo esponenziale) mentre per SHOIN è $NEXPTIME$ (tempo esponenziale non deterministico) mentre per OWL \emph{full} non possiamo dire che termini sempre. Viene da pensare per quale assurdo motivo usare strumenti con questa complessità in zone esponenziale ma la complessità è una statistica. È molto più rilevante la statistica su dati non casuali e sopratutto non su qualsiasi combinazione esistente. È molto più rilevante la media ricavata degli input d'interesse.
+					
+				\paragraph*{Complessità e pratica} Nell'uso pratico anche se la complessità è in tempo esponenziale la maggior parte delle \emph{query} rientra in complessità molto più basse. Per esempio molta dell'algoritmica di Google sta in $EXPTIME$ ma le \emph{query} più frequenti stanno molto al di sotto. Solo alcune \emph{query} sono esponenziali e il problema è risolto attraverso interruzioni di esse con timer. 
+				In SPARQL che è in $PSPACE$ soltanto togliendo la \emph{keyword} \verb|OPTIONAL| scendiamo nella complessità (assoluta) in $co-NP$. Anche OWL DL e OWL \emph{Lite} a livello statistico molta informazione all'interno del web non è casuale ma segue un ordine e non rientra nella logica indecidibile ma in logiche studiate: ALC e AL che corrispondono rispettivamente a complessità PSPACE e P.				
 		
 	\section{Il web semantico diventa Linked Data}
+		Passiamo all'uso del web semantico che per una scelta di \emph{marketing} è stato definito come \textbf{\emph{Linked Data}}.
 		
 		\subsection{Classificazione LOD}
-			I LOD sono i tipi di \emph{Linked Data open}, ossia disponibili a tutti gratuitamente. Sono classificati in una scala da 1 a 5 stelle.
+			I LOD sono i tipi di \emph{Linked Data Open}, ossia disponibili a tutti gratuitamente. Sono classificati in una scala da 1 a 5 stelle.
 			\begin{description}
 				\item[$\bigstar$] dati sul web liberi (\emph{open}).
 				\item[$\bigstar \bigstar$] dati sul web liberi con formato strutturato ovvero \emph{machine readable}.
@@ -200,6 +308,13 @@
 				\item[$\bigstar \bigstar \bigstar \bigstar$] dati sul web liberi con formato \emph{semantic web}.
 				\item[$\bigstar \bigstar \bigstar \bigstar \bigstar$] dati sul web liberi con formato \emph{semantic web} collegati ad altri per darli un contesto.
 			\end{description}
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=\textwidth]{images/LInformazioneEIlWebSemantico-IlCasoUsher}
+				\caption{Il web semantico - Informazione strutturata (sulla destra) raccolta tramite \emph{lifting}}
+				\label{fig:LInformazioneEIlWebSemantico-IlCasoUsher}
+			\end{figure}
 			
 		\subsection{Lifting \& lowering}
 			\emph{Lifting \& lowering} corrispondono, rispettivamente, al passaggio dal mondo a 3 stelle al mondo semantico di 4 e 5 stelle e viceversa.
@@ -218,19 +333,59 @@
 			Un esempio di quanto potenziale offrono questi strumenti ce lo fornisce il sito \href{http://www.wikido.com/}{www.wikido.com}. Questo sito preleva da un insieme di siti selezionati informazione che con Open Calais viene trasformata in informazione di alto livello ottenendo dati strutturati.
 			Lo stesso fa Google con particolari \emph{query} (vedi figura ~\ref{fig:LInformazioneEIlWebSemantico-IlCasoUsher}).
 			
-			\begin{figure} [h]
-				\centering
-				\includegraphics[width=\textwidth]{images/LInformazioneEIlWebSemantico-IlCasoUsher}
-				\caption{Il web semantico - Informazione strutturata (sulla destra) raccolta tramite \emph{lifting}}
-				\label{fig:LInformazioneEIlWebSemantico-IlCasoUsher}
-			\end{figure}
+		
+		\subsection{Connettere le informazioni: il Mash Up}
+			Abbiamo visto le immense potenzialità che derivano dal \emph{lifting} dei dati, ma come è possibile fare questo? Di seguito spieghiamo un tipo di algoritmo adottato da Google che permette questa "magia".
 			
+			\paragraph*{Il problema:}  Dati due grafi di conoscenza dobbiamo collegarli (se sono collegabili). Per fare questo ci serve una funzione che dati due oggetti web in input, abbia in output un valore di similitudine.
+			Immaginando una funzione $simil(x,y)$ posso ottenere un livello di similitudine, se ottengo entro una certa soglia relaziono $x$ con $y$. Con una tecnica di \emph{brute force} otterrei una complessità pari a:
+			\[
+				O(|G_1| \cdot |G_2|) 
+			\]
+			perché sto elaborando i \emph{BIG DATA}.
+			
+			Una tecnica più efficace sfrutta la \textbf{distanza di Levenshtein} che misura la distanza tra due stringhe. Ad esempio una stringa con un carattere diverso da un altra ha distanza 1. È grazie all'uso di esse che Google o qualsiasi altro motore di ricerca mette a disposizione una correzione della \emph{query} inserita dall'utente, ricerche correlate o suggerimenti.
+			
+			Andando più fini, possiamo sfruttare le proprietà delle distanze:
+			\begin{itemize}
+				\item $d(x,y)\ge 0$
+				\item $d(x,y)=0 \Leftrightarrow x=y$
+				\item $d(x,y)=d(y,x)$
+				\item $d(x,y) \le d(x,z)+d(z,y)$ (limite superiore)
+			\end{itemize}
+			Ci interessa la distanza tra due oggetti e con l'ultima proprietà posso ottenere un'approssimazione:
+			\begin{align}
+				d(x,z) &\le d(x,y)+d(y,z) \\
+				d(x,z)-d(y,z) &\le d(x,y) \quad \quad \text{(limite inferiore)}
+			\end{align}
+			Da cui:
+			\[
+				d(x,z)-d(y,z) \le d(x,y) \le d(x,z) + d(z,y)
+			\]
+			Così, invece di calcolare $d(x,y)$ calcoliamo un range d'approssimazione se sappiamo la distanza da un punto $z$ (che descrive geometricamente una stringa). Per sfruttare ciò quindi abbiamo necessità di calcolare la distanza dai punti $z$ (\emph{exemplar}). Con più punti \emph{exemplar} più avremo un range preciso al costo di più calcoli. Fissiamo quindi un numero di punti \emph{exemplar} e calcoliamo solo in essi la distanza riducendo il numero di calcoli.
+			Per diminuire al minimo il numero di punti \emph{exemplar} e far sì che questi diano un range d'approssimazione accettabile dobbiamo prendere punti distribuiti equamente. 
+			Iniziamo scegliendo un punto e calcoliamo tutte le distanze tra lui e gli altri punti. Dopodiché scegliamo il punto con la distanza maggiore calcolata e ripetiamo lo stesso procedimento in modo da ottenere sempre i punti il più distante possibile.
+			Decisi quanti sceglierne otteniamo uno spazio informativo diviso in aree associabili ai punti focali. In ogni zona posso avere delle classifiche dei punti più vicini rispetto ai punti focali, per cui, tornando al problema iniziale, utilizziamo questa tecnica per ottenere i valori di similitudine fissando sempre una soglia e utilizzando i range di approssimazione. Il calcolo:
+			\[
+				simil(x,y) \le \text{soglia}
+			\]
+			Con questa tecnica diviene:
+			\[
+				\text{Se} d(x,z) - d(y,z) > \text{soglia} \Rightarrow d(x,y)>\text{soglia}
+			\]
+			Con un'unica operazione (una differenza) sappiamo già quale punti scartare poiché le distanze le abbiamo già calcolate.
+			
+			Ad esempio:
+				Prendiamo un \emph{exemplar} del grafo $G_1$ e scegliamo un elemento di $G_2$: $y$, non appena:
+				\begin{align}
+					simil(x,exemplar)-simil(x,exemplar)&>soglia \\
+					\Rightarrow \quad simil(x,y)&>soglia
+				\end{align}
+				e scartiamo $y$. Inoltre anche per ogni altro $x$ della partizione (sotto la classifica della zona precalcolata) varrà la stessa cosa sempre (la soglia sarà ancora maggiore) per cui rimuoviamo il calcolo per tutti gli altri punti al di sotto della classifica, con un'operazione soltanto.	
+				Solo per le coppie non scartate da questa tecnica facciamo $simil(x,y)>soglia$.
 		
-		\subsection{Connettere le informazioni}
-			Abbiamo visto le immense potenzialità che derivano dal \emph{lifting} dei dati, ma come è possibile fare questo? Di seguito spieghiamo un tipo di algoritmo adottato da Google che permette questa magia.
-		
-			\subsubsection{Scegliere i punti}
-				Scegliere i punti si rivela il vero problema. Infatti i punti tra cui scegliere sono la radice quadrata della dimensione dei dati. La complessità quindi risulta:
+			\subsubsection{Quanti punti scegliere?}
+				Scegliere il numero di punti \emph{exemplar} si rivela il vero problema. Si è visto sperimentalmente che il numero ottimale di punti è la radice quadrata della  dimensione dei dati (grafo più grande). La complessità quindi risulta:
 				\[
 					O(|E| \cdot |G_1|) + O(|G_1| \cdot |G_2|) = O((|E| + |G_2|) \cdot |G1|)
 				\]
