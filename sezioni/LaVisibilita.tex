@@ -1,7 +1,7 @@
 
 \chapter{La visibilità}
 
-È	Altra caratteristica essenziale per l'informazione all'interno di un sito è l'essere trovata. Per far ciò conta la \textbf{visibilità esterna} e questa è determinata dal posizionamento del sito sui motori di ricerca. 
+Altra caratteristica essenziale per l'informazione all'interno di un sito è l'essere trovata. Per far ciò conta la \textbf{visibilità esterna} e questa è determinata dal posizionamento del sito sui motori di ricerca. 
 	Vedremo che è essenziale posizionarsi nella top 10 per le \emph{keyword} che ci riguardano e capiremo come promuovere un sito analizzando il funzionamento dei \emph{search engine} (SE) e l'uso che gli utenti ne fanno.
 
 	\section{Posizionamento SERP}	
@@ -19,9 +19,9 @@
 			\item 2\% click (effetto \emph{black jersay} o \emph{Malabrocca}).		
 		\end{enumerate}
 		
-		Nota: le strategie che verranno illustrate in seguito non funzionano sempre, basta infatti un minimo cambiamento per cambiare il comportamento degli utenti sui risultati. Infatti le recenti introduzioni di Google sono state analizzate molto, prima di farle diventare effettive. La striscia di immagini per esempio svolgono un effetto sospensivo per trattenere l'utente e non hanno impatto sulla percezione del testo.
+		Nota: le strategie che verranno illustrate in seguito non funzionano sempre, basta infatti un minimo cambiamento per cambiare il comportamento degli utenti sui risultati. Infatti recenti introduzioni di Google sono state analizzate molto, prima di farle diventare effettive. La striscia di immagini per esempio svolgono un effetto sospensivo per trattenere l'utente e non hanno impatto sulla percezione del testo.
 	
-	\section{SMAPDEX (SEO)}
+	\section{SPAMDEX (SEO)}
 		È l'insieme di attività svolte con lo scopo di far sì che un sito sia indicizzato da Google e occupi le posizioni più alte della SERP. Nelle seguenti sezioni prima spiegheremo il funzionamento dei motori di ricerca e poi illustreremo le tecniche per migliorare il posizionamento o addirittura ingannare il SE.
 		Il \textbf{punteggio di una pagina} è calcolato sul riferimento a due componenti delle pagine:
 		\begin{itemize}
@@ -30,7 +30,7 @@
 		\end{itemize}
 		
 		\subsection{Parte testuale}
-			Per la parte testuale si misura la qualità in base a quanto una parola è importante per una pagina. Per misurare l'importanza di una parola si utilizzano due tecniche:
+			Per la parte testuale si misura la qualità in base a quanto una parola è importante per una pagina attraverso il TFIDF. Per misurare l'importanza di una parola si utilizzano due tecniche:
 			
 			\subsubsection{Term frequency (TF)}
 				Misurare la frequenza di una parola. Ad esempio su 100 parole in una pagina 5 sono di nostro interesse per cui il TF è uguale al 5\%.
@@ -41,12 +41,12 @@
 				
 				Esempio: su 1000 pagine "il" appare in 980 pagine, ha TF=98\% mentre:
 				\[
-					IDF=\log(\frac{1}{0,98})=0,008;
+					IDF=\log \left(\frac{1}{0,98} \right)=0,008;
 				\]
 				
 				Altro esempio: su 1000 pagine la parola "pippo" ha il 10\% di frequenza, allora:
 				\[
-				IDF=\log(\frac{1}{0,1})=1;
+				IDF=\log \left(\frac{1}{0,1} \right)=1;
 				\]
 				
 				Ora più rara è la parola più è alto il bonus.
@@ -62,7 +62,7 @@
 				\item[Body spam:] inserire le \emph{keyword} semplicemente nel body html.
 				\item[Title spam:] inserire le \emph{keyword} sul titolo delle pagine web, è una parte che l'utenza media non vedrà mai.
 				\item[Meta tag spam:] inserire le \emph{keyword} in appositi tag html (i \emph{meta}) che descrivono a \emph{keyword} la pagina. Per l'inteso sfruttamento i SE oramai ignorano questo genere di spam.
-				\item[Anchor text spam:] inserire le \emph{keyword} nel testo di un link tra i tag \emph{<a>\dots </a>}. Questo oltre al punteggio della pagina aumenta il punteggio alla pagina destinazione e il bonus viene dato con meno limiti per il TFIDF.
+				\item[Anchor text spam:] inserire le \emph{keyword} nel testo di un link tra i tag \verb|<a>...</a>|. Questo oltre al punteggio della pagina aumenta il punteggio alla pagina destinazione e il bonus viene dato con meno limiti per il TFIDF.
 				\item[URL spam:] inserire le \emph{keyword} nell'URL dell'indirizzo della pagina. Otteniamo bonus simili a quelli dell'\emph{anchor text spam}.
 			\end{description}
 			
@@ -78,7 +78,7 @@
 				\end{description}		
 		
 			\subsubsection{Quali keyword?}
-				Una domanda a cui la risposta probabilmente decreterà il successo di un sito. Le \emph{keyword} devono essere pensate in base a quello che cerca l'utente. Occorre un'attenta analisi prima di lanciarsi nel mondo SEO. Di seguito alcuni strumenti utili a tale scopo:
+				Una domanda di cui la risposta probabilmente decreterà il successo di un sito. Le \emph{keyword} devono essere pensate in base a quello che cerca l'utente. Occorre un'attenta analisi prima di lanciarsi nel mondo SEO. Di seguito alcuni strumenti utili a tale scopo:
 				\begin{itemize}
 					\item \href{https://adwords.google.com/KeywordPlanner}{Google keyword tool} (a pagamento);
 					\item \href{http://keywordtool.io/}{keywordtool.io} (alternativa gratis);
@@ -86,7 +86,7 @@
 				\end{itemize}
 			
 		\subsection{Problema e soluzioni del term spamming}
-			Non basta potenziare la pagina se infatti questa non è utile e soffre di problemi di usabilità l'utente semplicemente abbandonerà. Se vogliamo potenziare una pagina con le tecniche di \emph{term spamming} dobbiamo nascondere in qualche modo all'utente ciò che serve ai SE.
+			Non basta potenziare la pagina, se infatti questa non è utile e soffre di problemi di usabilità l'utente semplicemente abbandonerà. Se vogliamo potenziare una pagina con le tecniche di \emph{term spamming} dobbiamo nascondere in qualche modo all'utente ciò che serve ai SE.
 		
 			\subsubsection{Content hiding}
 				Il contenuto potenziante è nascosto all'utente e solo i motori di ricerca lo vedono.
@@ -108,7 +108,7 @@
 				\item $\omega$, $v$ è un link da $\omega$ a $v$;
 				\item $d_\omega$ è il numero di link uscenti.
 			\end{itemize}
-			Ossia, se una pagina $\omega$ ha un link verso un'altra pagina un certo punteggio viene dato quest'ultima.
+			Ossia, se una pagina $\omega$ ha un link verso un'altra pagina viene data una frazione ($1/d_\omega$) di \emph{pagerank} a quest'ultima.
 			Come vincolo abbiamo:
 			\[
 				\sum\pi_v=1
@@ -118,7 +118,7 @@
 		
 			\subsubsection{Le catene di Markov e il random walk}
 				La riformulazione avviene sfruttando l'algebra lineare e speciali matrici dette catene di Markov che godono di alcune proprietà unite alla teoria della probabilità. Il \emph{pagerank} di una pagina web diventa quindi la probabilità di entrare in quella pagina da altre pagine.
-				Per rendere più chiaro il concetto si può pensare ad una scimmia  (un \emph{rando surfer}) che naviga il web in modo del tutto casuale, la probabilità che la scimmia entri in una pagina ne determina il suo punteggio.
+				Per rendere più chiaro il concetto si può pensare ad una scimmia  (un \emph{random surfer}) che naviga il web in modo del tutto casuale, la probabilità che la scimmia entri in una pagina ne determina il suo punteggio.
 				
 				Esempio:
 					dato il seguente grafo i nodi che rappresentano pagine e gli archi i link:
@@ -132,15 +132,15 @@
 				Per attuare il sistema spiegato in precedenza c'è la necessità di far girovagare questi \emph{random surfer} (i famosi \emph{spider}) che raccolgono dati da cui calcolare il \emph{pagerank}. La navigazione casuale da pagina a pagina può rivelarsi fatale in alcuni casi.
 				\begin{description}
 					\item[Spider traps:] nel caso in cui uno spider rimanga intrappolato all'interno di un sito in cui pagine continuano a indirizzare ad altre pagine in un ciclo infinito (si pensi ad un calendario online).
-					\item[Island:] esistono poi casi in cui alcuni pezzi di rete sono isolati dagli altri, dei veri e propri micro-web indipendenti in cui per gli \emph{spider} non c'è alcun modo di passare. 
+					\item[Island:] esistono poi casi in cui alcuni pezzi di rete sono isolati dagli altri, dei veri e propri micro-web indipendenti in cui per gli \emph{spider} non c'è alcun modo di passare, ciò significa: nessun valore di \emph{pagerank} o infiniti valori diversi di \emph{pagerank}.
 				\end{description}
 				
 		\subsection{Pagerank 2.0}
-			A seguito dei problemi prima elencati si è cercato un'altra soluzione: il teletrasporto. La formula quindi cambia in:
+			A seguito dei problemi prima elencati si è cercato un'altra soluzione: il teletrasporto. La formula quindi cambia in (con $N$ numero totale di pagine):
 			\[
-				\pi_v=(1-\epsilon)\cdot(\sum_{(\omega, v) \in E}\frac{\pi_{\omega}}{d_w})+\frac{\epsilon}{N}
+				\pi_v=(1-\epsilon)\cdot \left( \sum_{\omega, v \in E} \frac{\pi_{\omega}}{d_w} \right) + \frac{\epsilon}{N}
 			\]
-			Nella pratica si è aumentata la casualità. Ora la scimmia ha anche un dado, con una certa probabilità da come spiegato in precedenza con un'altra probabilità effettua il teletrasporto in un'altra pagina casuale (da notare un comportamento ancora più incoerente con quello fatto dagli utenti).
+			Nella pratica si è aumentata la casualità. Ora la scimmia ha anche un dado,  con una certa probabilità effettua il teletrasporto in un'altra pagina casuale altrimenti fa come spiegato in precedenza (da notare un comportamento apparentemente più strano se paragonato con quello degli utenti, in realtà non poi così tanto poiché molte volte un utente effettua il teletrasporto attraverso URL diretto).
 			
 			In questo modo grazie al \textbf{fattore di teleporting} $\epsilon$ risolviamo \emph{spider traps} e \emph{island}; più questo fattore è verso il 100\% e più il punteggio in probabilità alle pagine diventa uguale per tutte, viceversa più è verso lo 0 e più il \emph{pagerank} si avvicina a quello calcolato in precedenza.
 			
@@ -179,7 +179,7 @@
 				Questo controintuitivamente non risulta essere vero! Con la presenza di \emph{outlink} posso aumentare il \emph{pagerank} della mia pagina con dinamiche imprevedibili. Ciò deriva dalla presenza del \emph{fattore di teleporting}.
 			
 			\subsubsection{Spam farm}
-				Esistono numerose tecniche per usare gli \emph{outlink} e gli \emph{inlink} per aumentare il \emph{pagerank}. Nascono le \emph{spam farm} strutture apposite studiate di link e pagine per l'incremento del punteggio nei vari SE. 
+				Esistono numerose tecniche per usare gli \emph{outlink} e gli \emph{inlink} per aumentare il \emph{pagerank}. Le \emph{spam farm} sono una di queste tecniche: strutture apposite studiate di link e pagine per l'incremento del punteggio nei vari SE. 
 				Una \emph{spam farm} ottimale singola consiste in una pagina o più pagine, definite pagine \textbf{target}, puntate da link bidirezionali da altre pagine, definite pagine \textbf{potenzianti}. Un struttura ottimale inoltre presenta la proprietà di \emph{reachability}, ovvero se gli spider dei SE raggiungono la pagina \emph{target} attraverso una pagina \emph{potenziante} allora tutta la \emph{spam farm} diventa raggiungibile (vedere figura ~\ref{fig:LaVisibilita-SpamFarm1}).
 				
 				\begin{figure} [h]
@@ -196,7 +196,7 @@
 						
 					\begin{figure} [h]
 						\centering
-						\includegraphics[scale=1]{images/LaVisibilita-SpamFarm2}
+						\includegraphics[scale=0.9]{images/LaVisibilita-SpamFarm2}
 						\caption{La visibilità - Spam farm alleanza profonda}
 						\label{fig:LaVisibilita-SpamFarm2}
 					\end{figure}
@@ -250,15 +250,18 @@
 					\centering
 					\includegraphics[scale=0.6]{images/LaVisibilita-FormaWeb}
 					\caption{La visibilità - Forma ad alto livello del web}
+					\label{fig:LaVisibilita-FormaWeb}
 				\end{figure}								
 				
 				\begin{figure} [h]
 					\subfloat[][\emph{Distribuzione link entranti}.]
-						{\includegraphics[width=.48\textwidth]{images/LaVisibilita-ContromisureSE1}} \quad
+						{\includegraphics[width=.48\textwidth]{images/LaVisibilita-ContromisureSE1}
+						\label{fig:LaVisibilita-ContromisureSE1}} \quad
 					\subfloat[][\emph{Distribuzione link uscenti}.]
-						{\includegraphics[width=.48\textwidth]{images/LaVisibilita-ContromisureSE2}}
+						{\includegraphics[width=.48\textwidth]{images/LaVisibilita-ContromisureSE2}
+						\label{fig:LaVisibilita-ContromisureSE2}}
 					\caption{La visibilità - Rappresentazioni grafiche dei link nel web}
-					\label{fig:LaVisibilita-FormaWeb}
+					
 				\end{figure}
 			
 		\subsection{Pagerank 3.0}
@@ -281,7 +284,7 @@
 			
 				Il \emph{pagerank} personalizzato però non è disponibile soltanto ai SE ma anche all'utente. Ogni profilo personale di ogni utente calcola un \emph{pagerank} personalizzato in base a tutti i dati raccolti su di lui (vedi tutte le piattaforme Google disponibili che ogni giorno utilizziamo tutti).  In questo modo i risultati di ricerca varieranno in base ai suoi interessi.
 				Ma come calcolare questo \emph{pagerank} personalizzato per ogni utente nel web!? Se restringiamo a soli due valori: "sì" e "no" abbiamo con $N$ pagine: $2^N$ personalizzazioni. Troppe\dots
-				Il \emph{pagerank} per fortuna ha laproprietà di essere linearmente componibile rispetto le probabilità; cioè se ho 100 pagine calcolate e risultanti "sì" e da un'altra parte ho altre 100 pagine calcolate e risultanti "sì" per calcolare il\emph{pagerank} delle 200 pagine mi basta unire i risultati. Grazie a questa proprietà possiamo calcolare per $N$ pagine $N$ \emph{pagerank} personalizzati. Sono ancora troppi calcoli\dots $N$ è la taglia del web, miliardi di miliardi di pagine web!
+				Il \emph{pagerank} per fortuna ha la proprietà di essere \textbf{linearmente componibile} rispetto le probabilità; cioè se ho 100 pagine calcolate e risultanti "sì" e da un'altra parte ho altre 100 pagine calcolate e risultanti "sì" per calcolare il  \emph{pagerank} delle 200 pagine mi basta unire i risultati. Grazie a questa proprietà possiamo calcolare per $N$ pagine $N$ \emph{pagerank} personalizzati. Sono ancora troppi calcoli\dots $N$ è la taglia del web, miliardi di miliardi di pagine web!
 				
 				La soluzione quindi è il \emph{topic pagerank}, selezionare un certo numero di \emph{keyword} e \emph{topic}. Creare dei profili che approssimano gli utenti e su questo numero limitato calcolare il \emph{pagerank} personalizzato diviso a categorie a sua volta divise in \emph{topic} più precisi secondo le necessità. Combinando i \emph{pagerank} precalcolati traccio il profilo degli utenti. Da questi profili "grezzi" si calcolano i profili astratti che li conterranno e andranno a modificare il \emph{pagerank} in base alle ricerche dell'utente. Si fa notare che ogni \emph{pagerank} personalizzato è compatibile con le contromisure ma comporta disturbi e limitazioni alle ottimizzazioni SEO.
 			
@@ -308,7 +311,7 @@
 				
 				Come calcolare però le due funzioni di \emph{ranking}? Quali valori dare ai due pesi individuati?
 									
-			\subsubsection{Parte buona \& parte cattiva (*)}
+			\subsubsection{Parte buona \& parte cattiva}
 				Soluzione al problema di \textbf{doppio ranking}:
 				Dato un \emph{ranking} $R$ definiamo \emph{janus extension} $R^J$. Le due parti quindi sono \textbf{simmetriche} e \textbf{duali}, entrambe riflettono la struttura del web. Invertiamo la struttura del web e identifichiamola con $G^\#$, se un link andava da A a B adesso va da B ad A.
 				Calcoliamo $R^J$:
@@ -320,9 +323,10 @@
 					\item $R(G^+)$ rappresenta il \emph{pagerank} positivo calcolato come spiegato in precedenza;
 					\item $R((G^\#)^-)$ rappresenta il web ribaltato su cui calcolo la parte negativa (vedremo più avanti come calcolarla).
 				\end{itemize}
+				Quindi: sul web ribaltato calcolo la parte negativa e ottengo l'antimisura. Dalla parte positiva sottraggo questa antimisura. Ottengo la parte infernale $R^J$ su cui calcolo il \emph{pagerank} negativo come calcolo quello positivo.
 				Un \textbf{vantaggio} di questa tecnica di calcolo è una sola misura da ottimizzare perché riutilizziamo la misura che abbiamo già per creare il suo riflesso. Di \textbf{contro} però dobbiamo cercare altro spazio informativo da cui attingere per i valori di $W^+$ e $W^-$.
 			
-				\paragraph{Email with web}
+				\subsubsection{Email with web}
 					Quale spazio migliore se non quello che viaggia parallelamente al web? Le email anche se staccate contengono preziose informazioni per il web classico. Inoltre anche lo spazio delle email può essere visto come un'immensa rete:
 					\begin{itemize}
 						\item Ogni \textbf{indirizzo mail} è un nodo.
