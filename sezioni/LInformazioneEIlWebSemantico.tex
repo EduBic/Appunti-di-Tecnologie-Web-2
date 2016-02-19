@@ -6,20 +6,20 @@
 		\subsection{Un esempio di problema informativo}
 			Con l'espansione del web si sperimentano i primi bot cattura informazione. Uno di questi sistemi creato dal MIT permetteva un acquisto in pochi passi. Una \emph{query} famosa fu "manda una rosa alla mia ragazza", il bot trovò il prodotto desiderato e anche ne trovò un altro che corrispondeva a tutt'altro.
 			Lo stesso capitò alla RIA (l'equivalente della SIAE) con un proprio bot che scovò una canzone piratata del cantante Usher ma che in realtà si rivelò una canzone completamente diversa, creata a scopo educativo dal professor Peter Usher.
-			Molti investimenti sono stati fatti e ad oggi i bot sfruttano i tipi semantici, comprendendo. Vediamo come:
+			Molti investimenti sono stati fatti e ad oggi i bot comprendono meglio le informazioni sfruttando i tipi semantici.
 		
 		\subsection{Evoluzione}
-			Ma se al posto dell'Html avremmo informazione strutturata? Così facendo potremmo rimuovere le  ambiguità e le macchine potrebbero "capire" le informazioni del web. Uno strumento per fare questo può essere l'XML, semplice e flessibile, creato proprio per la necessità di strutturazione dei dati. Purtroppo proprio da questi stessi vantaggi nacquero molti dialetti che resero impossibile l'aggregazione. L'XML uscito fallimentare dall'\emph{open world} portò quindi alla necessità di creare un nuovo livello superiore che permettesse l'aggregazione e un nuovo strumento che lo descrivesse: l'RDF. Vediamo i vantaggi rispetto l'XML:
+			Se al posto dell'Html avessimo informazione strutturata potremmo rimuovere le  ambiguità e le macchine potrebbero "capire" le informazioni del web. Uno strumento per fare questo poteva essere l'XML, semplice e flessibile, creato proprio per la necessità di strutturazione dei dati. Purtroppo proprio da questi stessi vantaggi sono nati molti dialetti che rendono impossibile l'\textbf{aggregazione}. L'XML uscì fallimentare dall'\emph{open world} e portò quindi alla necessità di creare un nuovo livello superiore che permettesse l'aggregazione e un nuovo strumento che lo descrivesse: l'RDF. Vediamo i vantaggi rispetto l'XML:
 			\begin{itemize}
 				\item le informazioni mappano su un modello non ambiguo. In ogni modello RDF si può riconoscere quali bit rappresentano la semantica e quali la sintassi di contorno.
 				\item l'RDF è parte del web semantico.
 			\end{itemize}
-			L'RDF è quello strumento che mancava per rendere possibile l'aggregazione dell'informazione e il ragionamento automatico su di essa.
+			L'RDF è quello strumento che mancava per rendere possibile l'\textbf{aggregazione} dell'informazione e il ragionamento automatico su di essa.
 		
 	\section{Il web semantico}
 	
 		\subsection{Babel Fish: l'RDF}
-			Babel Fish è un traduttore istantaneo biologico descritto all'interno del libro \emph{Guida Galattica per gli Autostoppisti} di Douglas Adams. Il modello RDF (\emph{Resource Description Framework} può certamente interpretare questo ruolo di traduttore dal web che conosciamo a quello semantico come vediamo nella figura ~\ref{fig:LInformazioneEIlWebSemantico-WebSemantico}.
+			Babel Fish è un traduttore istantaneo biologico descritto all'interno del libro \emph{Guida Galattica per gli Autostoppisti} di Douglas Adams. Il modello RDF (\emph{Resource Description Framework}) può certamente interpretare questo ruolo di traduttore dal web che conosciamo a quello semantico come vediamo nella figura ~\ref{fig:LInformazioneEIlWebSemantico-WebSemantico}.
 			
 			\begin{figure}
 				\centering
@@ -29,7 +29,7 @@
 			\end{figure}			
 			
 			\subsubsection{Il modello RDF}
-				Il modello RDF è un \emph{framework} comune che descrive metadati, relazioni e concetti garantendo l'interoperabilità tra essi. Si basa sulla grammatica di base:
+				Il modello RDF è un \emph{framework} comune che descrive metadati, relazioni e concetti garantendo l'interoperabilità tra essi, ossia lo scambio di informazioni senza necessità di traduzioni di linguaggio. Si basa sulla grammatica di base:
 				\begin{quote}
 					$\langle$ soggetto - predicato - complemento oggetto $\rangle$
 				\end{quote}
@@ -50,7 +50,7 @@
 				L'RDF può essere rappresentato in due modi differenti:
 				\begin{description}
 					\item[dialetto XML] usando la struttura XML per alzare la complessità e arricchire il significato.
-					\item[N-triple] usando le triplette soggetto-predicato-verbo.
+					\item[N-triple] usando le triplette "soggetto-predicato-verbo".
 				\end{description}
 				Esempio di tripletta della frase \emph{"il cielo è blu"} contenente due stringhe:
 				\begin{quote}
@@ -70,7 +70,7 @@
 					\item[Aggregazione:] l'unione di due grafi di conoscenza è un grafo creato tramite collegamenti automatici dei nomi del web (URI). Questa è la proprietà più importante e che decreta il successo di RDF rispetto ai dialetti XML. 
 					\item[Contenitori:] concetti logici di AND e OR.
 					\item[Variabili:] oggetti logici non specificati.
-					\item[Monotonicità:] preso un grafo, se l'informazione espressa in esso supponiamo sia vera allora tutti i sottografi sono veri.
+					\item[Monotonicità:] preso un grafo, se l'informazione espressa in esso è vera allora tutti i sotto-grafi sono veri.
 					\item[Reificazione:] garantisce la monotonicità, riduce ad un oggetto (\emph{"cosifica"} cit.) una asserzione. Per esempio nella frase \emph{"Gromit dice che 'la luna è di formaggio'"}, la frase nel sottolivello \emph{"la luna è di formaggio"} è in realtà un'altra frase che grazie al processo di reificazione diventa un oggetto, per cui, anche se non sappiamo sia vero ciò non influisce nella veridicità della prima frase. Grazie a ciò abbiamo anche una diversificazione di livelli.
 				\end{description}
 				
@@ -100,7 +100,7 @@
 				Grazie all'RDF Schema, quindi, possiamo \textbf{categorizzare l'informazione}.
 
 			\subsubsection{Oltre l'RDF Schema}
-				Abbiamo fissato delle regole semantiche ma siamo ancora al livello base delle ontologie (stato tassonomie). SI può fare molto di più: l'RDF permette l'aggregazione automatica attraverso l'URI. Ma gli URI presentano problemi di ambiguità.
+				Abbiamo fissato delle regole semantiche ma siamo ancora al livello base delle ontologie (stato tassonomie). Si può fare molto di più: l'RDF permette l'aggregazione automatica attraverso l'URI. Ma gli URI presentano problemi di ambiguità.
 			
 		\subsection{L'architettura del web (Tim Berners-Lee)}
 			Tim Berners-Lee prevedeva già questo alla nascita del web e infatti il web è nato seguendo questi assiomi:
@@ -125,17 +125,16 @@
 			Il supporto di base fornito da RDF Schema è stato quindi esteso con lo strato ontologico. Questo strato è descritto attraverso il linguaggio OWL (\emph{Web Ontology Language}) che si occupa di collegare e relazionare i vocaboli dando ad ognuno il proprio dominio d'interesse (la propria ontologia appunto).
 		
 			\subsubsection{Caratteristiche e proprietà di OWL}
-				In OWL si può parlare dell'(in)uguaglianza degli oggetti. Per fare questo definisce le proprietà:
-					\begin{description}
-						\item[EquivaleClass:]
-						\item[equivalentProerty]
-						\item[sakIndividualeAS]
-						\item[differentFrom:]
-						\item[allDifferent]
-						\item[SameIndividualAs]
-					\end{description}
+				In OWL si può parlare dell'(in)uguaglianza degli oggetti. Per fare questo definisce le funzionalità:
+					\begin{itemize}
+						\item equivaleClass: per capire se due classi di vocabolari identificano la stessa.
+						\item equivalentProerty: per capire se due \emph{property} (verbi) hanno stesso significato.
+						\item sameIndividualAs
+						\item differentFrom
+						\item allDifferent
+					\end{itemize}
 					
-				Grazie a queste proprietà si riesce a risolvere il problema dei nome. Altre funzionalità disposte da OWL:
+				Grazie a queste funzionalità si riesce a risolvere il problema dei nomi e a mappare ontologie diverse sotto lo stesso grafo. Altre funzionalità offerte da OWL:
 				
 					\begin{itemize}
 						\item inverseOf: collegare due proprietà per complementarietà.
@@ -157,7 +156,7 @@
 				Abbiamo tutte queste informazioni su cui ragionarci. Ma come? Purtroppo quando si passa ad un ragionamento ad alto livello la logica diventa indecidibile. Per descrivere espressioni ad alto livello sulle macchine è necessaria una traduzione a basso livello poiché la logica di prim'ordine, che fa uso dei costrutti logici $\exists$ e $\forall$, non è decidibile (la macchina non sa creare un programma che termini sempre). È il motivo per cui non abbiamo ancora linguaggi di programmazione ad alto livello che seguono una scrittura più vicina al nostro linguaggio.
 			
 		\subsection{SPARQL}
-			Abbiamo bisogno di un linguaggio che permetta una comunicazione di alto livello (relazionale) e che si occupi lui di definire la parte di basso livello. Un linguaggio simile funzionante è SQL in cui definisce tabelle e relazioni. Il vincoli di SQL è che alcune cose sono limitate, questo per permettere di garantire la terminazione del programma. La stessa cosa è stata applicata al web semantico sostituendo le relazioni tra tabelle con relazioni in un grafo generico. Nasce così SPARQL (SPARQL \emph{Protocol And RDF Query Language}, il linguaggio per permettere le \emph{query} nel web semantico seguendo le scelte di design di SQL.
+			Abbiamo bisogno di un linguaggio che permetta una comunicazione di alto livello (relazionale) e che si occupi lui di definire la parte di basso livello. Un linguaggio simile funzionante è SQL in cui definisce tabelle e relazioni. Per permettere di garantire la terminazione del programma, SQL è vincolati da alcuni limiti. La stessa cosa è stata applicata al web semantico sostituendo le relazioni tra tabelle con relazioni in un grafo generico. Nasce così SPARQL (SPARQL \emph{Protocol And RDF Query Language}), il linguaggio per permettere le \emph{query} nel web semantico seguendo le scelte di design di SQL.
 		
 			\subsubsection{Modellazione con SPARQL}		
 				Il fattore principale di SPARQL è il \emph{pattern matching} tra triplette nella struttura a grafo. 
@@ -177,7 +176,7 @@
 		\subsection{Vocabolari ontologici}
 		
 				\subsubsection{DC: Dublin Core}
-					Uno dei primi tentativi di strutturare il web in maniera semantica. Definisce le proprietà di base fondamentali e essenziali che modellano l'intera struttura dei dati semantici. Queste proprietà di base individuate sono 15 che elenchiamo per completezza:
+					Il Dublin Core è uno dei primi tentativi di strutturare il web in maniera semantica, descrivendo le pagine web URI. Definisce le proprietà di base fondamentali e essenziali che modellano l'intera struttura dei dati semantici. Queste proprietà di base individuate sono 15 che elenchiamo per completezza:
 					\begin{enumerate}
 						\item \emph{Title}
 						\item \emph{Creator}
@@ -244,7 +243,7 @@
 			\end{quote}
 			
 			\subsubsection{Extra SPARQL}
-				Una caratteristica di SPARQL interessante è la possibilità di ricerca con dati opzionali, ossia nulli o assenti. Nel web semantico è facile avere informazioni parziali per questo SPARQL è stato previsto l'operatore \verb|OPTIONAL|. Ad esempio:
+				Una caratteristica di SPARQL interessante è la possibilità di ricerca con dati opzionali, ossia nulli o assenti. Nel web semantico è facile avere informazioni parziali per questo in SPARQL è stato previsto l'operatore \verb|OPTIONAL|. Ad esempio:
 				\begin{quote}
 				\begin{verbatim}
 					PREFIX foaf:<http://xmlns.com/foaf/0.1/>
@@ -278,10 +277,10 @@
 			
 
 			\subsubsection{La soluzione di OWL}
-				Con OWL invece si è optato per mantenere
-				\begin{itemize}[label={}]
-					\item sia l'\textbf{espressività}, avere una logica decidibile ma limitata,
-					\item e sia la \textbf{computabilità}, avere una logica espressiva ma complessa da gestire.
+				Con OWL invece si è optato per mantenere:
+				\begin{itemize}
+					\item l'\textbf{espressività}, cioè avere una logica espressiva ma complessa da gestire;
+					\item la \textbf{computabilità}, cioè avere una logica decidibile ma limitata.
 				\end{itemize}
 				Per garantirle entrambe, si sono creati dei sottoinsiemi di OWL:
 				\begin{description}
@@ -291,10 +290,10 @@
 				\end{description}
 				
 			\subsubsection{Complessità e statistica}	
-				La complessità della logica SHIFT è $EXPTIME$ (\emph{query} a tempo esponenziale) mentre per SHOIN è $NEXPTIME$ (tempo esponenziale non deterministico) mentre per OWL \emph{full} non possiamo dire che termini sempre. Viene da pensare per quale assurdo motivo usare strumenti con questa complessità in zone esponenziale ma la complessità è una statistica. È molto più rilevante la statistica su dati non casuali e sopratutto non su qualsiasi combinazione esistente. È molto più rilevante la media ricavata degli input d'interesse.
+				La complessità della logica SHIFT è $EXPTIME$ (\emph{query} a tempo esponenziale) mentre per SHOIN è $NEXPTIME$ (tempo esponenziale non deterministico) mentre per OWL \emph{full} non possiamo dire che termini sempre. Viene da pensare per quale assurdo motivo usare strumenti con questa complessità in zone esponenziale ma la complessità è una statistica. È molto più rilevante la statistica su dati non casuali e sopratutto non su qualsiasi combinazione esistente. Per esempio la media ricavata degli input più d'interesse.
 					
 				\paragraph*{Complessità e pratica} Nell'uso pratico anche se la complessità è in tempo esponenziale la maggior parte delle \emph{query} rientra in complessità molto più basse. Per esempio molta dell'algoritmica di Google sta in $EXPTIME$ ma le \emph{query} più frequenti stanno molto al di sotto. Solo alcune \emph{query} sono esponenziali e il problema è risolto attraverso interruzioni di esse con timer. 
-				In SPARQL che è in $PSPACE$ soltanto togliendo la \emph{keyword} \verb|OPTIONAL| scendiamo nella complessità (assoluta) in $co-NP$. Anche OWL DL e OWL \emph{Lite} a livello statistico molta informazione all'interno del web non è casuale ma segue un ordine e non rientra nella logica indecidibile ma in logiche studiate: ALC e AL che corrispondono rispettivamente a complessità PSPACE e P.				
+				In SPARQL che è in $PSPACE$ soltanto togliendo la \emph{keyword} \verb|OPTIONAL| scendiamo nella complessità (assoluta) in $co-NP$. A livello statistico molta informazione all'interno del web non è casuale ma segue un ordine e non rientra nella logica indecidibile ma in logiche studiate: OWL DL ha logica ALC e OWL \emph{Lite} AL che corrispondono rispettivamente a complessità PSPACE e P.				
 		
 	\section{Il web semantico diventa Linked Data}
 		Passiamo all'uso del web semantico che per una scelta di \emph{marketing} è stato definito come \textbf{\emph{Linked Data}}.
@@ -317,7 +316,7 @@
 			\end{figure}
 			
 		\subsection{Lifting \& lowering}
-			\emph{Lifting \& lowering} corrispondono, rispettivamente, al passaggio dal mondo a 3 stelle al mondo semantico di 4 e 5 stelle e viceversa.
+			\emph{Lifting} \& \emph{lowering} corrispondono, rispettivamente, al passaggio dal mondo a 3 stelle al mondo semantico di 4 e 5 stelle e viceversa.
 			Esempi di strumenti di \emph{lifting} sono:
 			\begin{itemize}
 				\item DR2Q: trasforma il linguaggio SQL in RDF.
@@ -365,7 +364,7 @@
 			Così, invece di calcolare $d(x,y)$ calcoliamo un range d'approssimazione se sappiamo la distanza da un punto $z$ (che descrive geometricamente una stringa). Per sfruttare ciò quindi abbiamo necessità di calcolare la distanza dai punti $z$ (\emph{exemplar}). Con più punti \emph{exemplar} più avremo un range preciso al costo di più calcoli. Fissiamo quindi un numero di punti \emph{exemplar} e calcoliamo solo in essi la distanza riducendo il numero di calcoli.
 			Per diminuire al minimo il numero di punti \emph{exemplar} e far sì che questi diano un range d'approssimazione accettabile dobbiamo prendere punti distribuiti equamente. 
 			Iniziamo scegliendo un punto e calcoliamo tutte le distanze tra lui e gli altri punti. Dopodiché scegliamo il punto con la distanza maggiore calcolata e ripetiamo lo stesso procedimento in modo da ottenere sempre i punti il più distante possibile.
-			Decisi quanti sceglierne otteniamo uno spazio informativo diviso in aree associabili ai punti focali. In ogni zona posso avere delle classifiche dei punti più vicini rispetto ai punti focali, per cui, tornando al problema iniziale, utilizziamo questa tecnica per ottenere i valori di similitudine fissando sempre una soglia e utilizzando i range di approssimazione. Il calcolo:
+			Decisi quanti sceglierne otteniamo uno spazio informativo diviso in aree associabili ai punti focali. In ogni zona posso avere delle \textbf{classifiche} dei punti più vicini rispetto ai punti focali, per cui, tornando al problema iniziale, utilizziamo questa tecnica per ottenere i valori di similitudine fissando sempre una soglia e utilizzando i range di approssimazione. Il calcolo:
 			\[
 				simil(x,y) \le \text{soglia}
 			\]
@@ -378,18 +377,18 @@
 			Ad esempio:
 				Prendiamo un \emph{exemplar} del grafo $G_1$ e scegliamo un elemento di $G_2$: $y$, non appena:
 				\begin{align}
-					simil(x,exemplar)-simil(x,exemplar)&>soglia \\
+					simil(x,exemplar)-simil(y,exemplar)&>soglia \\
 					\Rightarrow \quad simil(x,y)&>soglia
 				\end{align}
 				e scartiamo $y$. Inoltre anche per ogni altro $x$ della partizione (sotto la classifica della zona precalcolata) varrà la stessa cosa sempre (la soglia sarà ancora maggiore) per cui rimuoviamo il calcolo per tutti gli altri punti al di sotto della classifica, con un'operazione soltanto.	
 				Solo per le coppie non scartate da questa tecnica facciamo $simil(x,y)>soglia$.
 		
-			\subsubsection{Quanti punti scegliere?}
+			\subsubsection{Quanti punti e la complessità}
 				Scegliere il numero di punti \emph{exemplar} si rivela il vero problema. Si è visto sperimentalmente che il numero ottimale di punti è la radice quadrata della  dimensione dei dati (grafo più grande). La complessità quindi risulta:
 				\[
 					O(|E| \cdot |G_1|) + O(|G_1| \cdot |G_2|) = O((|E| + |G_2|) \cdot |G1|)
 				\]
-				Siamo partiti da con una complessità pari a $O(|G_1|\cdot|G_2|)$ con la tecnica \emph{brute force} e siamo arrivati a $O((|E| + |G_2|) \cdot |G1|)$. Abbiamo ottenuto un algoritmo peggiore ma non nella pratica, perché questo algoritmo messo in pratica funziona splendidamente e consente di avere un risparmio di costo computazionale del 95\% rispetto al \emph{brute force}.
+				Siamo partiti da con una complessità pari a $O(|G_1|\cdot|G_2|)$ con la tecnica \emph{brute force} e siamo arrivati a $O((|E| + |G_2|) \cdot |G1|)$. Abbiamo ottenuto un algoritmo peggiore ma nella pratica si è rivelato performante portando ad avere anche un risparmio di costo computazionale del 95\% rispetto al \emph{brute force}.
 			
 			\subsubsection{Esporre i dati}
 				Per esporre i dati nel web abbiamo diversi modi. Uno può essere quello di mostrare i dati come file sotto un URI, ma questo è poco pratico. Nella pratica si preferisce ricorrere a interfacce con cui fare \emph{query} usando SPARQL, offrendo in questo modo un servizio web molto potente e flessibile. Questi \emph{query} fatte attraverso indirizzo web con classici \emph{"urlencoding"} e passaggio parametri con GET HTTP sono chiamate \textbf{\emph{endpoint}}. Un esempio di SPARQL \emph{endpoint}:
@@ -401,7 +400,7 @@
 				\end{verbatim}
 				\end{quote}
 				Un esempio concreto di un tale servizio è \href{http://wiki.dbpedia.org/}{dbpedia.com} da cui è possibile effettuare \emph{query} SPARQL e ottenere pagine come questa: tutta la conoscenza di \href{http://dbpedia.org/page/Albert_Einstein}{Albert Einstain} in una pagina.
-				Le ontologie principale sono date da \href{https://schema.org/}{schema.org}. Un altro sito interessante è \href{http://www.visualdataweb.org/relfinder.php}{www.visualdatamedia.org}, il quale mette a disposizione un servizio che permette di navigare il grafo delle conoscenza sulle parole date. 
+				Le ontologie principali sono date da \href{https://schema.org/}{schema.org}. Un altro sito interessante è \href{http://www.visualdataweb.org/relfinder.php}{www.visualdatamedia.org}, il quale mette a disposizione un servizio che permette di navigare il grafo delle conoscenza sulle parole date. 
 					
 					
 					
