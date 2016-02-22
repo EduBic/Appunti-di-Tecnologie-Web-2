@@ -1,6 +1,6 @@
 
 \chapter{La ricerca}
-	Un altro problema fondamentale dei siti è far sì che il proprio contenuto sia trovato dagli utenti. La ricerca diviene quindi un fattore fondamentale all'interno del web. Esistono varie modalità di ricerca, prima di tutto ogni sito internet se abbastanza grande dovrebbe avere come servizio la ricerca interna vedremo come inserirla nel nostro sito garantendo l'usabilità ed discutendo problemi di molti siti. Scopriremo anche i motivi per cui diverse modalità di ricerca al primo impatto stupefacenti si rivelano essere fallimentari per l'usabilità dei siti internet. Sono le ricerche 2.0 che con numerosi tentativi negli anni hanno cercato di sfruttare la sintesi vocale lottando contro il problema del contesto.
+	Un altro problema fondamentale dei siti è far sì che il proprio contenuto sia trovato dagli utenti. La ricerca diviene quindi un fattore fondamentale all'interno del web. Esistono varie modalità di ricerca, prima di tutto ogni sito internet se abbastanza grande dovrebbe avere come servizio la ricerca interna e quindi vedremo come inserirla nel nostro sito garantendo l'usabilità ed discutendo problemi di molti siti. Scopriremo anche i motivi per cui diverse modalità di ricerca al primo impatto stupefacenti si rivelano essere fallimentari per l'usabilità dei siti internet, sono le ricerche 2.0 che con numerosi tentativi negli anni hanno cercato di sfruttare la sintesi vocale lottando contro il problema del contesto.
 
 	\section{Ricerca interna}
 		Una ricerca interna al proprio sito e la qualità di essa è determinata dal numero di pagine che questo ha.
@@ -14,7 +14,7 @@
 			\item il 40\% fa uso di link.
 		\end{itemize}
 		
-		Vista l'enorme importanza in molti siti si tende ad inserire uno strumento di ricerca, ma questo se fatto come si deve è molto costoso e troppo spesso si incorre all'uso di soluzioni \emph{low cost} che peggiorano soltanto la situazione. Solitamnete questa soluzione è di localizzare motori di ricerca sul proprio sito: costo zero ma:
+		Vista l'enorme importanza in molti siti si tende ad inserire uno strumento di ricerca, ma questo se fatto come si deve è molto costoso e troppo spesso si incorre all'uso di soluzioni \emph{low cost} che peggiorano soltanto la situazione. Solitamente questa soluzione è di localizzare motori di ricerca sul proprio sito, il costo è nullo ma:
 		\begin{itemize}
 			\item l'algoritmo dei motori di ricerca è ottimizzato per larghe scale, su bassa scala non dà risultati soddisfacenti.
 			\item Se l'utente usa la ricerca significa molto probabilmente che il motore di ricerca già utilizzato non l'ha portato al suo scopo per cui utilizzarlo ancora non servirà a niente.
@@ -30,16 +30,16 @@
 			\end{itemize}
 	
 			\subsubsection{Principio di Robert Browning}
-				Enunciamo un principio che nel web ha praticamente valenza generale. IL primo ad nunciarlo fu Robert Browning e in seguito fu ripreso dall'architetto modernista Ludwig Mies van der Rohe.
+				Enunciamo un principio che nel web ha praticamente valenza generale. Il primo ad annunciarlo fu Robert Browning e in seguito fu ripreso dall'architetto modernista Ludwig Mies van der Rohe.
 				\begin{quote}
 					``\emph{Less is more}''
 				\end{quote}
-				Che applicato al web consiste in: \emph{meno dettagli e orpelli significa qualcosa di meglio}. L'esempio lampante è la pagina iniziale del motore di ricerca Google.
+				Che applicato al web consiste in: \emph{``meno dettagli e orpelli significa qualcosa di meglio''} (cit.). L'esempio lampante è la pagina iniziale del motore di ricerca Google.
 				Ludwig Mies van der Rohe estese anche il principio in:
 				\begin{quote}
 					``\emph{Less is more but God is in the detail}''
 				\end{quote} 
-				Per capire quanto i dettagli sono importanti si veda l'Errore 404 spiegato successivamente.
+				Per capire quanto i dettagli sono importanti si veda l'Errore 404 ~\ref{sec:error404}.
 	
 	\section{Ricerca vincolata}
 		La ricerca vincolata si prefigge di accompagnare l'utente passo passo attraverso parametri, deve essere considerata come un'aggiunta alla classica ricerca spiegata in precedenza. Vantaggi e svantaggi:
@@ -50,7 +50,7 @@
 		
 					
 		\subsection{Ricerca vincolata dinamica}
-			La ricerca dinamica avviene per ogni settaggio di un parametro.
+			La ricerca dinamica avviene per ogni settaggio di parametro.
 			Svantaggi:
 			\begin{itemize}
 				\item Quando il numero dei vincoli è tanto l'attesa del caricamento è alto.
@@ -59,7 +59,7 @@
 			\end{itemize}
 	
 		\subsection{Ricerca vincolata statica}
-			La ricerca avviene solo nel momento in cui l'utente ha impostato tuti i parametri richiesti e ha dato il via.
+			La ricerca avviene solo nel momento in cui l'utente ha impostato tutti i parametri richiesti e ha dato il via.
 			Svantaggi:
 			\begin{itemize}
 				\item Il pulsante non ha contenuto standard. Le parole "search" o "cerca" illudono che sia la ricerca classica. 
@@ -67,18 +67,18 @@
 			\end{itemize}
 		
 		\subsection{Soluzione ibrida}
-			In generale la soluzione dinamica è meglio nel caso in cui un utente non sappia cosa cercare mentre p il contrario per la ricerca statica. Esiste una terza soluzione che consiste nell'avviare la ricerca automaticamente al termine del settaggio dei parametri. In questo modo togliamo il pulsante per la ricerca statica e non appesantiamo il server con ricerche in più.
+			In generale la soluzione dinamica è meglio nel caso in cui un utente non sappia cosa cercare mentre è il contrario per la ricerca statica. Esiste una terza soluzione (ibrida) che consiste nell'avviare la ricerca automaticamente al termine del settaggio dei parametri. In questo modo togliamo il pulsante per la ricerca statica e non appesantiamo il server con ricerche superflue.
 		
 	\section{Consigli}
-		DI seguito elenchiamo alcuni consigli per mostrare i risultati di ricerca nel migliore dei modi.
+		Di seguito elenchiamo alcuni consigli per mostrare i risultati di ricerca nel migliore dei modi.
 		\begin{description}
 			\item[Ordinamento:] mettere sempre a disposizione un ordinamento bidirezionale.
-			\item[Casi limite:] se non ci sono risultati dobbiamo comunicare all'utente che ci non ci sono risultanti altrimenti si confonde l'utente che pensa non funzioni.
-			\item[Error 404:] quando i link sono "rotti" (non esistono più) deve esserci una pagina con suggerimenti all'utente che offrono aiuto. Molte volte a queste si affianca qualcosa di simpatico che ironizza la situazione, ciò sospende i timer, un esempio di questo lo troviamo nella pagina 404 del sito \href{http://www.b3ta.com/error404}{www.b3ta.com}, che raccoglie le più esilaranti immagini delle pagine error 404 nel web.
+			\item[Casi limite:] se non ci sono risultati dobbiamo comunicare all'utente che ci non ci sono risultati, altrimenti si confonde l'utente che pensa non funzioni.
+			\item[Error 404:] \label{sec:error404} quando i link sono "rotti" (non esistono più) deve esserci una pagina con suggerimenti all'utente che offrono aiuto. Molte volte a queste si affianca qualcosa di simpatico che ironizza la situazione, ciò sospende i timer, un esempio di questo lo troviamo nella pagina 404 del sito \href{http://www.b3ta.com/error404}{www.b3ta.com}, che raccoglie le più esilaranti immagini delle pagine error 404 nel web.
 			\item[Presentazione risultati:] esistono due modi per presentare i risultati di una ricerca.
 				\begin{itemize}
 					\item Modalità classica: vedi figura ~\ref{fig:LaRicerca-Consigli}.
-					\item Modalità a griglia: permette di visualizzare molta più informazione compatta ma questo fa sì che gli elementi mostrati perdano rilevanza. Con questa modalità l'utente si confonde e si perde nella micro-navigazione. Non a caso Google immagini propone i risultati a griglia, vuole che l'utente stia per più tempo all'interno del sul otore di ricerca. (vedi figira ~\ref{fig:LaRicerca-Consigli})
+					\item Modalità a griglia: permette di visualizzare molta più informazione compatta ma questo fa sì che gli elementi mostrati perdano rilevanza. Con questa modalità l'utente si confonde e si perde nella micro-navigazione. Non a caso Google immagini propone i risultati a griglia, vuole che l'utente stia per più tempo all'interno del sul otore di ricerca. (vedi figura ~\ref{fig:LaRicerca-Consigli})
 				\end{itemize}
 		\end{description}
 		
@@ -92,10 +92,10 @@
 	\section{Il search box}
 		Agli arbori del web nelle caselle di ricerca si inserivano nella maggior parte dei casi parole uniche, con il passare del tempo però gli utenti usano sempre più parole. Il numero massimo di caratteri determina il numero di utenti a cui basterà.
 		\begin{itemize}
-			\item con 10 caratteri solo il 35\% degi utenti sarà soddisfatt.
-			\item con 30 l'88\%.
+			\item con 10 caratteri solo il 35\% degli utenti sarà soddisfatt.
+			\item con 30 caratteri l'88\%.
 		\end{itemize}
-		Quest'ultimo numero è la media consigliata. Un box troppo piccolo aumenta lo stress proporzionalmente per ogni carattere che sfora e gli utenti tendono a scrivere meno con risultati della query più scarsi.
+		Quest'ultimo numero è la media consigliata. Un box troppo piccolo aumenta lo stress proporzionalmente per ogni carattere che sfora e gli utenti tendono a scrivere meno con risultati della \emph{query} più scarsi.
 		Per la necessità di spazio per il design in molti casi si è ricorso ad un \textbf{box dinamico} che una volta cliccato si allarga per contenere più caratteri.
 	
 	\section{Ricerce 2.0 (*)}
@@ -113,7 +113,7 @@
 		
 		\subsection{Il grande problema}
 			Basarsi sulla voce non basta perché rende difficile interpretare le parole senza l'aiuto del \textbf{contesto}.
-			La tecnologia \emph{Google Glass} non ha avuto successo proprio per questo motivo, l'utenza chiedeva più pulsanti perché la sintesi vocale non era ancora pronta.
+			La tecnologia \emph{Google Glass} non ha avuto successo proprio per questo motivo, l'utenza chiedeva più pulsanti perché la sintesi vocale non era sufficiente.
 			
 		\subsection{L'utente e le ricerche 2.0}
 			Le ricerche del 2.0 diminuiscono la soddisfazione del 42\%! Perché?
@@ -123,8 +123,8 @@
 			\end{itemize}
 			Un esempio positivo che segue questi accorgimenti è \emph{Anna} di IKEA. Vediamone i punti forti:
 			\begin{itemize}
-				\item riceve in input solo testo e presenta un engine linguistico ben fatto. 
-				\item Ha un'interfaccia cartoon.
+				\item riceve in input solo testo e presenta un \emph{engine} linguistico ben fatto. 
+				\item Ha un'interfaccia \emph{cartoon}.
 				\item È uno strumento facoltativo.
 			\end{itemize}
 		
