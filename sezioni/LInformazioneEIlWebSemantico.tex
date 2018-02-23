@@ -50,7 +50,7 @@
 				L'RDF può essere rappresentato in due modi differenti:
 				\begin{description}
 					\item[dialetto XML] usando la struttura XML per alzare la complessità e arricchire il significato.
-					\item[N-triple] usando le triplette "soggetto-predicato-verbo".
+					\item[N-triple] usando le triplette "soggetto-predicato-complemento oggetto".
 				\end{description}
 				Esempio di tripletta della frase \emph{"il cielo è blu"} contenente due stringhe:
 				\begin{quote}
@@ -113,7 +113,7 @@
 			\subsubsection{Dare un nome ad ogni cosa: il problema degli URI}
 				Trovare un nome (web) non è banale:
 				\begin{description}
-					\item[URI \emph{variant problem}:] esistono molte varianti per o stesso concetto.
+					\item[URI \emph{variant problem}:] esistono molte varianti per lo stesso concetto.
 					\item[URI \emph{variant law}:] l'utilità decresce esponenzialmente con il numero di varianti (legge della varianza degli URI). Più un nome ha diversi significati più questo perde valore.
 					\item[URI \emph{variant size}:] un URI può acquisire diversi significati in base al dominio di interesse. "Problema \emph{big red barn}" cit. (se un bambino indica una mucca illustrata in un libro, ciò che indica è "una mucca" o "un libro"? Esistono livelli diversi).
 				\end{description}				
@@ -127,8 +127,8 @@
 			\subsubsection{Caratteristiche e proprietà di OWL}
 				In OWL si può parlare dell'(in)uguaglianza degli oggetti. Per fare questo definisce le funzionalità:
 					\begin{itemize}
-						\item equivaleClass: per capire se due classi di vocabolari identificano la stessa.
-						\item equivalentProerty: per capire se due \emph{property} (verbi) hanno stesso significato.
+						\item equivalentClass: per capire se due classi di vocabolari identificano la stessa.
+						\item equivalentProperty: per capire se due \emph{property} (verbi) hanno stesso significato.
 						\item sameIndividualAs
 						\item differentFrom
 						\item allDifferent
